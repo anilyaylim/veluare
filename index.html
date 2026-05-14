@@ -152,20 +152,20 @@
   .collection-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; gap: 40px; }
   .collection-header h2 { font-family: 'Bodoni Moda', serif; font-size: clamp(36px, 4vw, 56px); font-weight: 400; letter-spacing: .01em; line-height: 1.05; }
   .collection-header p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 21px; color: rgba(10,10,10,.75); max-width: 320px; text-align: right; line-height: 1.5; }
-  .pieces-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .piece { position: relative; background: #FAF4E6; aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
+  .pieces-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .piece { position: relative; background: #F0E4C4; aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
   .piece::before { display: none; }
   .piece-stone { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
   .stone-shape { position: relative; }
-  .stone-sq { width: 90px; height: 90px; background: var(--gold-light); transform: rotate(45deg); box-shadow: inset 0 0 0 1px var(--gold), 0 20px 40px -10px rgba(0,0,0,.8); position: relative; }
-  .stone-sq::before { content: ""; position: absolute; inset: 14%; background: var(--gold); }
-  .stone-sq::after { content: ""; position: absolute; left:0;right:0;top:50%;height:1px;background:rgba(10,10,10,.5); }
-  .stone-oval { width: 60px; height: 90px; background: var(--gold-light); border-radius: 50%; box-shadow: inset 0 0 0 1px var(--gold), 0 20px 40px -10px rgba(0,0,0,.8); position: relative; }
-  .stone-oval::before { content: ""; position: absolute; inset: 14%; background: var(--gold); border-radius: 50%; }
-  .stone-oval::after { content: ""; position: absolute; left:0;right:0;top:50%;height:1px;background:rgba(10,10,10,.4); }
-  .stone-round { width: 90px; height: 90px; background: var(--gold-light); border-radius: 50%; box-shadow: inset 0 0 0 1px var(--gold), 0 20px 40px -10px rgba(0,0,0,.8); position: relative; }
-  .stone-round::before { content: ""; position: absolute; inset: 14%; background: var(--gold); border-radius: 50%; }
-  .stone-round::after { content: ""; position: absolute; left:0;right:0;top:50%;height:1px;background:rgba(10,10,10,.4); }
+  .stone-sq { width: 90px; height: 90px; background: #000000; transform: rotate(45deg); box-shadow: inset 0 0 0 1px var(--gold), 0 20px 40px -10px rgba(0,0,0,.8); position: relative; }
+  .stone-sq::before { content: ""; position: absolute; inset: 14%; background: #1a1a1a; }
+  .stone-sq::after { content: ""; position: absolute; left:0;right:0;top:50%;height:1px;background:rgba(201,168,76,.4); }
+  .stone-oval { width: 60px; height: 90px; background: #000000; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--gold), 0 20px 40px -10px rgba(0,0,0,.8); position: relative; }
+  .stone-oval::before { content: ""; position: absolute; inset: 14%; background: #1a1a1a; border-radius: 50%; }
+  .stone-oval::after { content: ""; position: absolute; left:0;right:0;top:50%;height:1px;background:rgba(201,168,76,.4); }
+  .stone-round { width: 90px; height: 90px; background: #000000; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--gold), 0 20px 40px -10px rgba(0,0,0,.8); position: relative; }
+  .stone-round::before { content: ""; position: absolute; inset: 14%; background: #1a1a1a; border-radius: 50%; }
+  .stone-round::after { content: ""; position: absolute; left:0;right:0;top:50%;height:1px;background:rgba(201,168,76,.4); }
   .piece-frame { position: absolute; inset: 16px; border: 1px solid rgba(180,140,40,.55); pointer-events: none; transition: border-color .4s; }
   .piece:hover .piece-frame { border-color: rgba(180,140,40,.9); }
   .piece-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 20px; background: linear-gradient(transparent, rgba(10,10,10,.92)); transform: translateY(8px); opacity: 0; transition: opacity .35s, transform .35s; }
@@ -587,7 +587,7 @@
       <span class="lang-tr">Yazışma Talebi</span><span class="lang-en">Request Correspondence</span>
     </button>
     <p class="form-note">
-      <span class="lang-tr">Dikkatinizi hak edenden fazlası gönderilmez.</span>
+      <span class="lang-tr">Gereksiz bildirim yok, sadece değer taşıyanlar.</span>
       <span class="lang-en">No newsletters. No frequency. Only what is worth your attention.</span>
     </p>
   </form>
