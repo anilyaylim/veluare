@@ -1,0 +1,1266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>VELUARE — Brand Identity</title>
+<meta name="viewport" content="width=1440" />
+<meta name="description" content="Veluare Brand Identity Manual — Maison Veluare, Milano. Vol. I, MMXXVI." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --black: #0A0A0A;
+    --gold: #C9A84C;
+    --gold-light: #E8C96D;
+    --offwhite: #F5F0E8;
+    --hairline: rgba(201, 168, 76, .35);
+    --hairline-dark: rgba(10, 10, 10, .18);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    background: var(--offwhite);
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body { overflow-x: hidden; }
+
+  /* ── type utilities ── */
+  .serif       { font-family: 'Bodoni Moda', serif; }
+  .cormorant   { font-family: 'Cormorant Garamond', serif; }
+  .smallcaps   { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: .32em; font-weight: 400; font-size: 10px; }
+  .smallcaps.lg { font-size: 12px; letter-spacing: .38em; }
+  .gold        { color: var(--gold); }
+
+  .diamond-divider {
+    display: inline-block;
+    width: 5px; height: 5px;
+    background: currentColor;
+    transform: rotate(45deg);
+    vertical-align: middle;
+    margin: 0 .9em;
+    position: relative;
+    top: -1px;
+  }
+  .diamond-divider.sm { width: 3px; height: 3px; margin: 0 .7em; }
+
+  /* ── page scaffold ── */
+  .page   { width: 1440px; margin: 0 auto; position: relative; }
+  .spread { position: relative; padding: 120px 100px; }
+  .spread + .spread { border-top: 1px solid var(--hairline-dark); }
+  .spread.dark { background: var(--black); color: var(--offwhite); }
+  .spread.dark + .spread,
+  .spread + .spread.dark { border-top: none; }
+
+  .spread-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 80px;
+  }
+  .spread-header .num {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--gold);
+  }
+
+  /* ── top bar ── */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 100px;
+    border-bottom: 1px solid var(--hairline-dark);
+    font-size: 10px;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+  }
+  .topbar .mark {
+    font-family: 'Bodoni Moda', serif;
+    letter-spacing: .5em;
+    font-size: 11px;
+  }
+
+  /* ── cover ── */
+  .cover {
+    background: var(--black);
+    color: var(--offwhite);
+    height: 1080px;
+    padding: 80px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-meta { display: flex; justify-content: space-between; align-items: flex-start; }
+  .cover-meta .smallcaps { color: var(--gold); }
+  .cover-center { display: flex; flex-direction: column; align-items: center; gap: 34px; }
+  .cover-center .establ {
+    color: var(--gold);
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: .4em;
+  }
+  .cover-center .word {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 400;
+    font-size: 184px;
+    letter-spacing: .22em;
+    color: var(--offwhite);
+    padding-left: .22em;
+  }
+  .cover-center .sub {
+    color: var(--offwhite);
+    font-size: 11px;
+    letter-spacing: .55em;
+    display: flex;
+    align-items: center;
+  }
+  .cover-center .sub .diamond-divider { background: var(--gold); }
+  .cover-foot { display: flex; justify-content: space-between; align-items: flex-end; color: var(--gold); }
+  .cover-foot .vol { font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 36px; }
+  .cover-foot .right { text-align: right; }
+  .cover-foot .right .smallcaps { color: var(--gold); }
+  .cover-rule {
+    position: absolute;
+    left: 100px; right: 100px; top: 50%;
+    height: 1px;
+    background: var(--gold);
+    opacity: .18;
+  }
+
+  /* ── monogram (the brand mark) ── */
+  .monogram {
+    position: relative;
+    display: inline-block;
+    width: var(--mg, 360px);
+    height: var(--mg, 360px);
+  }
+  .monogram .ring {
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+  }
+  .monogram .ring.inner {
+    inset: 6%;
+    border-color: rgba(201, 168, 76, .35);
+  }
+  .monogram .va {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .monogram .va .v,
+  .monogram .va .a {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: calc(var(--mg, 360px) * .68);
+    color: var(--gold);
+    line-height: 1;
+    display: inline-block;
+  }
+  .monogram .va .v { transform: translateX(calc(var(--mg, 360px) * .08)); }
+  .monogram .va .a { transform: translateX(calc(var(--mg, 360px) * -.08)); }
+  .monogram .brilliant {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: calc(var(--mg, 360px) * .055);
+    height: calc(var(--mg, 360px) * .055);
+    background: var(--gold-light);
+    transform: translate(-50%, -50%) rotate(45deg);
+    box-shadow: 0 0 0 1px var(--black) inset, 0 0 0 calc(var(--mg, 360px) * .004) var(--black);
+  }
+  .monogram .brilliant::before {
+    content: "";
+    position: absolute;
+    inset: 18%;
+    background: var(--gold);
+  }
+  .monogram .brilliant::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 50%;
+    height: 1px;
+    background: rgba(10, 10, 10, .55);
+  }
+
+  /* monogram on light backgrounds */
+  .monogram.on-light .ring { border-color: var(--black); }
+  .monogram.on-light .ring.inner { border-color: rgba(10, 10, 10, .25); }
+  .monogram.on-light .va .v,
+  .monogram.on-light .va .a { color: var(--black); }
+  .monogram.on-light .brilliant {
+    background: var(--gold);
+    box-shadow: 0 0 0 1px var(--offwhite) inset;
+  }
+  .monogram.on-light .brilliant::before { background: var(--gold-light); }
+  .monogram.on-light .brilliant::after { background: rgba(245, 240, 232, .85); }
+
+  /* ── full lockup ── */
+  .lockup { display: flex; flex-direction: column; align-items: center; gap: 40px; }
+  .lockup .word {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 400;
+    font-size: 62px;
+    letter-spacing: .34em;
+    padding-left: .34em;
+    color: inherit;
+  }
+  .lockup .sub {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: .5em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .lockup.dark .word  { color: var(--offwhite); }
+  .lockup.dark .sub   { color: var(--gold); }
+  .lockup.light .word { color: var(--black); }
+  .lockup.light .sub  { color: #7a6420; }
+
+  /* ── grid utilities ── */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--hairline-dark);
+    border-bottom: 1px solid var(--hairline-dark);
+  }
+  .grid-2 > * { padding: 100px 60px; border-right: 1px solid var(--hairline-dark); }
+  .grid-2 > *:last-child { border-right: none; }
+
+  /* ── color palette ── */
+  .palette {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--hairline-dark);
+    border: 1px solid var(--hairline-dark);
+  }
+  .swatch { background: var(--offwhite); padding: 0; }
+  .swatch .chip { height: 340px; }
+  .swatch .meta { padding: 24px 22px 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .swatch .meta .name { font-family: 'Bodoni Moda', serif; font-size: 22px; font-weight: 400; }
+  .swatch .meta .vals {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: .22em;
+    line-height: 1.9;
+    color: #6b6b6b;
+    text-align: right;
+    text-transform: uppercase;
+  }
+  .swatch.s-black    .chip { background: var(--black); }
+  .swatch.s-gold     .chip { background: var(--gold); }
+  .swatch.s-goldlight .chip { background: var(--gold-light); }
+  .swatch.s-offwhite .chip { background: var(--offwhite); box-shadow: inset 0 0 0 1px var(--hairline-dark); }
+
+  /* ── typography spread ── */
+  .type-spec {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 60px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--hairline-dark);
+  }
+  .type-spec:first-of-type { border-top: 1px solid var(--hairline-dark); }
+  .type-spec .label {
+    font-size: 10px;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    color: #6b6b6b;
+    padding-top: 18px;
+  }
+  .type-spec .label .role {
+    color: var(--gold);
+    display: block;
+    margin-top: 6px;
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    letter-spacing: .1em;
+    text-transform: none;
+    font-size: 13px;
+  }
+  .type-spec .sample { font-family: 'Bodoni Moda', serif; }
+  .type-spec .meta {
+    font-size: 10px;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: #6b6b6b;
+    margin-top: 18px;
+  }
+  .type-display  .sample { font-size: 96px; font-weight: 400; letter-spacing: .04em; line-height: 1; }
+  .type-wordmark .sample { font-size: 54px; font-weight: 400; letter-spacing: .32em; padding-left: .32em; }
+  .type-sub      .sample { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 38px; font-weight: 300; letter-spacing: .02em; }
+  .type-caps     .sample { font-family: 'Inter', sans-serif; font-size: 20px; letter-spacing: .42em; text-transform: uppercase; font-weight: 400; }
+  .type-body     .sample { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; font-weight: 300; max-width: 760px; }
+
+  /* ── seals row ── */
+  .seals {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--hairline-dark);
+    border-bottom: 1px solid var(--hairline-dark);
+  }
+  .seals > div {
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    border-right: 1px solid var(--hairline-dark);
+  }
+  .seals > div:last-child { border-right: none; }
+  .seals .caption {
+    font-size: 10px;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    color: #6b6b6b;
+  }
+  .seals .caption span {
+    color: var(--gold);
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 13px;
+    display: block;
+    margin-top: 6px;
+  }
+
+  /* ── packaging: jewelry box ── */
+  .box-topdown {
+    width: 340px; height: 340px;
+    margin: 0 auto;
+    background: var(--black);
+    position: relative;
+    box-shadow: 0 40px 80px -30px rgba(10, 10, 10, .55), 0 1px 0 rgba(201, 168, 76, .1) inset;
+  }
+  .box-topdown::before {
+    content: "";
+    position: absolute;
+    inset: 20px;
+    border: 1px solid var(--gold);
+    opacity: .55;
+  }
+  .box-topdown .center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+  }
+  .box-topdown .corner {
+    position: absolute;
+    width: 28px; height: 28px;
+    border: 1px solid var(--gold);
+    opacity: .6;
+  }
+  .box-topdown .corner.tl { top: 34px; left: 34px; border-right: none; border-bottom: none; }
+  .box-topdown .corner.tr { top: 34px; right: 34px; border-left: none; border-bottom: none; }
+  .box-topdown .corner.bl { bottom: 34px; left: 34px; border-right: none; border-top: none; }
+  .box-topdown .corner.br { bottom: 34px; right: 34px; border-left: none; border-top: none; }
+
+  /* box side view */
+  .box-side {
+    width: 340px; height: 88px;
+    margin: 40px auto 0;
+    background: var(--black);
+    position: relative;
+    box-shadow: 0 30px 60px -30px rgba(10, 10, 10, .55);
+  }
+  .box-side .lid {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 30px;
+    background: var(--black);
+    border-bottom: 1px solid rgba(201, 168, 76, .35);
+  }
+  .box-side .seal-mini {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* ring box (velvet) */
+  .ringbox {
+    width: 300px; height: 280px;
+    margin: 0 auto;
+    background: var(--black);
+    position: relative;
+    box-shadow: 0 40px 60px -30px rgba(10, 10, 10, .55);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .ringbox::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(90deg, rgba(255, 255, 255, .012) 0 2px, transparent 2px 5px),
+      repeating-linear-gradient(0deg,  rgba(255, 255, 255, .008) 0 1px, transparent 1px 4px);
+    pointer-events: none;
+  }
+  .ringbox .lid {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 48%;
+    background: var(--black);
+    border-bottom: 1px solid rgba(201, 168, 76, .35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ringbox .well {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 52%;
+    background: #070707;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ringbox .slit {
+    width: 60px; height: 2px;
+    background: #1a1a1a;
+    border-radius: 2px;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, .6) inset;
+  }
+  .ringbox .ring-render {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    border: 5px solid var(--gold);
+    position: relative;
+    box-shadow: 0 12px 24px -6px rgba(0, 0, 0, .7);
+  }
+  .ringbox .ring-render::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: -10px;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px; height: 10px;
+    background: var(--gold-light);
+    box-shadow: 0 0 0 1px var(--gold);
+  }
+  .ringbox .ribbon {
+    position: absolute;
+    left: 50%; top: 48%;
+    transform: translate(-50%, -50%);
+    width: 1px; height: 14px;
+    background: var(--gold);
+    opacity: .4;
+  }
+
+  /* shopping bag */
+  .bag {
+    width: 280px; height: 380px;
+    margin: 0 auto;
+    background: var(--black);
+    position: relative;
+    box-shadow: 0 50px 80px -40px rgba(10, 10, 10, .55);
+  }
+  .bag::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    width: 34px;
+    background: #050505;
+    border-left: 1px solid rgba(201, 168, 76, .15);
+  }
+  .bag .handle {
+    position: absolute;
+    top: -18px; left: 50%;
+    transform: translateX(-50%);
+    width: 120px; height: 46px;
+    border: 1px solid var(--gold);
+    border-bottom: none;
+    border-radius: 90px 90px 0 0;
+    opacity: .85;
+  }
+  .bag .handle::before,
+  .bag .handle::after {
+    content: "";
+    position: absolute;
+    top: 42px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+  .bag .handle::before { left: -2px; }
+  .bag .handle::after  { right: -2px; }
+  .bag .top-fold {
+    position: absolute;
+    top: 0; left: 0; right: 34px;
+    height: 24px;
+    background: #0d0d0d;
+    border-bottom: 1px solid rgba(201, 168, 76, .18);
+  }
+  .bag .face {
+    position: absolute;
+    top: 24px; left: 0; right: 34px; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  /* business card */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .card {
+    aspect-ratio: 1.75 / 1;
+    box-shadow: 0 30px 60px -30px rgba(10, 10, 10, .45), 0 0 0 1px rgba(10, 10, 10, .06);
+    padding: 44px;
+    display: flex;
+    position: relative;
+  }
+  .card.front { background: var(--black); color: var(--offwhite); align-items: center; justify-content: center; }
+  .card.back  { background: var(--offwhite); color: var(--black); flex-direction: column; justify-content: space-between; }
+  .card.back .top    { display: flex; justify-content: space-between; align-items: flex-start; }
+  .card.back .name   { font-family: 'Bodoni Moda', serif; font-size: 28px; font-weight: 400; letter-spacing: .04em; }
+  .card.back .title  { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; color: #6b6b6b; margin-top: 6px; }
+  .card.back .bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+  .card.back .contact { font-size: 10px; letter-spacing: .24em; text-transform: uppercase; line-height: 2; color: #3a3a3a; }
+  .card.back .wordmini { font-family: 'Bodoni Moda', serif; font-size: 14px; letter-spacing: .42em; padding-left: .42em; color: var(--gold); }
+  .card .corner-mark { position: absolute; width: 18px; height: 18px; border: 1px solid var(--gold); opacity: .5; }
+  .card.front .corner-mark.tl { top: 20px; left: 20px; border-right: none; border-bottom: none; }
+  .card.front .corner-mark.br { bottom: 20px; right: 20px; border-left: none; border-top: none; }
+
+  /* instagram posts */
+  .ig-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  .ig {
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+    color: var(--offwhite);
+    box-shadow: 0 30px 60px -30px rgba(10, 10, 10, .45);
+  }
+  .ig.light { background: var(--offwhite); color: var(--black); }
+  .ig .frame {
+    position: absolute;
+    inset: 18px;
+    border: 1px solid var(--gold);
+    opacity: .6;
+    pointer-events: none;
+  }
+  .ig.light .frame { border-color: var(--black); opacity: .35; }
+  .ig .ig-top {
+    position: absolute;
+    top: 34px; left: 34px; right: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    letter-spacing: .34em;
+    text-transform: uppercase;
+  }
+  .ig .ig-bottom {
+    position: absolute;
+    bottom: 34px; left: 0; right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .ig .ig-bottom .word {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 24px;
+    letter-spacing: .42em;
+    padding-left: .42em;
+  }
+  .ig .ig-bottom .meta {
+    font-size: 9px;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+  .ig .ig-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 50px;
+    text-align: center;
+  }
+  .ig .ig-headline {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 30px;
+    line-height: 1.15;
+    letter-spacing: .01em;
+    font-weight: 400;
+    max-width: 360px;
+    text-wrap: balance;
+  }
+  .ig .ig-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--gold);
+  }
+  .ig.light .ig-sub { color: #7a6420; }
+
+  /* product placeholder (faceted stone) */
+  .product-still {
+    width: 240px; height: 240px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .product-still::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(45deg, rgba(201, 168, 76, .06) 0 8px, transparent 8px 18px);
+  }
+  .product-still .pp-label {
+    position: absolute;
+    bottom: 8px; left: 0; right: 0;
+    text-align: center;
+    font-family: ui-monospace, monospace;
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, .4);
+  }
+  .product-still .stone {
+    width: 120px; height: 120px;
+    background: var(--gold-light);
+    transform: rotate(45deg);
+    box-shadow: inset 0 0 0 1px var(--gold), 0 20px 30px -10px rgba(0, 0, 0, .5);
+    position: relative;
+  }
+  .product-still .stone::before {
+    content: "";
+    position: absolute;
+    inset: 14%;
+    background: var(--gold);
+  }
+  .product-still .stone::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 50%;
+    height: 1px;
+    background: rgba(10, 10, 10, .5);
+  }
+
+  /* section headers */
+  .section-eyebrow { display: flex; align-items: center; gap: 18px; margin-bottom: 18px; }
+  .section-eyebrow .rule { flex: 0 0 56px; height: 1px; background: var(--gold); }
+  .section-eyebrow span { font-size: 10px; letter-spacing: .4em; text-transform: uppercase; color: var(--gold); }
+  .section-title { font-family: 'Bodoni Moda', serif; font-size: 64px; font-weight: 400; line-height: 1; letter-spacing: .005em; }
+  .section-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: #6b6b6b; margin-top: 18px; max-width: 560px; line-height: 1.4; }
+  .spread.dark .section-sub { color: rgba(245, 240, 232, .6); }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+
+  /* specimens grid */
+  .specimens-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; }
+  .specimen { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+  .specimen .caption { font-size: 10px; letter-spacing: .32em; text-transform: uppercase; color: #6b6b6b; text-align: center; }
+  .specimen .caption .title { display: block; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 14px; letter-spacing: .02em; text-transform: none; color: var(--black); margin-bottom: 6px; }
+  .spread.dark .specimen .caption { color: rgba(245, 240, 232, .55); }
+  .spread.dark .specimen .caption .title { color: var(--offwhite); }
+
+  /* colophon */
+  .colophon {
+    padding: 80px 100px;
+    background: var(--black);
+    color: var(--offwhite);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+  }
+  .colophon .gold { color: var(--gold); }
+  .colophon .word { font-family: 'Bodoni Moda', serif; font-size: 16px; letter-spacing: .42em; padding-left: .42em; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ════════ COVER ════════ -->
+  <section class="cover" aria-label="Cover">
+    <div class="cover-meta">
+      <div>
+        <div class="smallcaps">Maison Veluare</div>
+        <div class="smallcaps" style="margin-top:8px;color:rgba(245,240,232,.5)">Brand Identity Manual</div>
+      </div>
+      <div style="text-align:right">
+        <div class="smallcaps">Vol. I</div>
+        <div class="smallcaps" style="margin-top:8px;color:rgba(245,240,232,.5)">MMXXVI · Edition 01</div>
+      </div>
+    </div>
+
+    <div class="cover-rule" aria-hidden="true"></div>
+
+    <div class="cover-center">
+      <div class="establ">— Maison fondée à Milano —</div>
+      <div class="monogram" style="--mg:300px" aria-hidden="true">
+        <div class="ring"></div>
+        <div class="ring inner"></div>
+        <div class="va"><span class="v">V</span><span class="a">A</span></div>
+        <div class="brilliant"></div>
+      </div>
+      <div class="word">VELUARE</div>
+      <div class="sub">
+        <span>Jewelry</span>
+        <span class="diamond-divider" aria-hidden="true"></span>
+        <span>High Jewelry</span>
+      </div>
+    </div>
+
+    <div class="cover-foot">
+      <div>
+        <div class="vol">№ 01</div>
+        <div class="smallcaps" style="margin-top:14px;color:rgba(201,168,76,.7)">Identity · Marks · Application</div>
+      </div>
+      <div class="right">
+        <div class="smallcaps">Confidential</div>
+        <div class="smallcaps" style="margin-top:8px;color:rgba(201,168,76,.7)">For internal use</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="topbar" role="banner">
+    <div>Veluare · Identity Manual</div>
+    <div class="mark" aria-label="VA monogram">VA</div>
+    <div>Vol. I · 2026</div>
+  </div>
+
+  <!-- ════════ SPREAD 01 · The Mark ════════ -->
+  <section class="spread dark" aria-label="Chapter I — The Mark">
+    <div class="spread-header">
+      <div>
+        <div class="section-eyebrow"><span class="rule" aria-hidden="true"></span><span>Chapter I · The Mark</span></div>
+        <h2 class="section-title" style="color:var(--offwhite)">The Primary Logo.</h2>
+        <p class="section-sub">A monogram cast in antique gold, framed by a hairline ring. A single brilliant rests at the crossing of V and A — the maison's pledge of permanence.</p>
+      </div>
+      <div class="spread-header num">№ 01 / 08</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:80px">
+      <div class="lockup dark">
+        <div class="monogram" style="--mg:380px" aria-hidden="true">
+          <div class="ring"></div>
+          <div class="ring inner"></div>
+          <div class="va"><span class="v">V</span><span class="a">A</span></div>
+          <div class="brilliant"></div>
+        </div>
+        <div class="word">VELUARE</div>
+        <div class="sub">
+          <span>Jewelry</span>
+          <span class="diamond-divider" style="background:var(--gold)" aria-hidden="true"></span>
+          <span>High Jewelry</span>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:80px;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,240,232,.55)">
+        <div><span style="color:var(--gold)">Primary application</span> · Deep Black #0A0A0A</div>
+        <div><span style="color:var(--gold)">Mark</span> · Antique Gold #C9A84C</div>
+        <div><span style="color:var(--gold)">Brilliant</span> · Light Gold #E8C96D</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ SPREAD 02 · Reversed ════════ -->
+  <section class="spread" aria-label="Chapter II — The Mark, Reversed">
+    <div class="spread-header">
+      <div>
+        <div class="section-eyebrow"><span class="rule" aria-hidden="true"></span><span>Chapter II · The Mark, Reversed</span></div>
+        <h2 class="section-title">On Off-White.</h2>
+        <p class="section-sub">For printed correspondence, certificates and editorial layouts. Identical construction; gold deepens to read against the warm ivory ground.</p>
+      </div>
+      <div class="spread-header num">№ 02 / 08</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:80px">
+      <div class="lockup light">
+        <div class="monogram on-light" style="--mg:380px" aria-hidden="true">
+          <div class="ring"></div>
+          <div class="ring inner"></div>
+          <div class="va"><span class="v">V</span><span class="a">A</span></div>
+          <div class="brilliant"></div>
+        </div>
+        <div class="word">VELUARE</div>
+        <div class="sub">
+          <span>Jewelry</span>
+          <span class="diamond-divider" aria-hidden="true"></span>
+          <span>High Jewelry</span>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:80px;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#6b6b6b">
+        <div><span style="color:var(--gold)">Reversed application</span> · Off-White #F5F0E8</div>
+        <div><span style="color:var(--gold)">Mark</span> · Deep Black #0A0A0A</div>
+        <div><span style="color:var(--gold)">Brilliant</span> · Antique Gold #C9A84C</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ SPREAD 03 · Seal variations ════════ -->
+  <section class="spread" aria-label="Chapter III — The Seal">
+    <div class="spread-header">
+      <div>
+        <div class="section-eyebrow"><span class="rule" aria-hidden="true"></span><span>Chapter III · The Seal</span></div>
+        <h2 class="section-title">VA Monogram, Isolated.</h2>
+        <p class="section-sub">Used on closures, foil-stamps, hangtags and digital favicons. The hairline ring may be omitted at sizes below 24px.</p>
+      </div>
+      <div class="spread-header num">№ 03 / 08</div>
+    </div>
+
+    <div class="seals">
+      <div>
+        <div style="background:var(--black);padding:60px">
+          <div class="monogram" style="--mg:240px" aria-hidden="true">
+            <div class="ring"></div><div class="ring inner"></div>
+            <div class="va"><span class="v">V</span><span class="a">A</span></div>
+            <div class="brilliant"></div>
+          </div>
+        </div>
+        <div class="caption">Seal · Primary<span>on Deep Black</span></div>
+      </div>
+      <div>
+        <div style="background:var(--offwhite);padding:60px;box-shadow:inset 0 0 0 1px var(--hairline-dark)">
+          <div class="monogram on-light" style="--mg:240px" aria-hidden="true">
+            <div class="ring"></div><div class="ring inner"></div>
+            <div class="va"><span class="v">V</span><span class="a">A</span></div>
+            <div class="brilliant"></div>
+          </div>
+        </div>
+        <div class="caption">Seal · Reversed<span>on Off-White</span></div>
+      </div>
+      <div>
+        <div style="background:var(--gold);padding:60px">
+          <div class="monogram" style="--mg:240px" aria-hidden="true">
+            <div class="ring" style="border-color:var(--black)"></div>
+            <div class="ring inner" style="border-color:rgba(10,10,10,.25)"></div>
+            <div class="va">
+              <span class="v" style="color:var(--black)">V</span>
+              <span class="a" style="color:var(--black)">A</span>
+            </div>
+            <div class="brilliant" style="background:var(--offwhite)"></div>
+          </div>
+        </div>
+        <div class="caption">Seal · Foil-stamp<span>on Antique Gold</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ SPREAD 04 · Color ════════ -->
+  <section class="spread" aria-label="Chapter IV — The Palette">
+    <div class="spread-header">
+      <div>
+        <div class="section-eyebrow"><span class="rule" aria-hidden="true"></span><span>Chapter IV · The Palette</span></div>
+        <h2 class="section-title">Four Tones, Held Flat.</h2>
+        <p class="section-sub">Veluare's palette never gradients. Each colour holds the page with intention — depth, metal, light, paper.</p>
+      </div>
+      <div class="spread-header num">№ 04 / 08</div>
+    </div>
+
+    <div class="palette">
+      <div class="swatch s-black">
+        <div class="chip"></div>
+        <div class="meta">
+          <div>
+            <div class="smallcaps" style="color:var(--gold)">Primary</div>
+            <div class="name" style="margin-top:8px">Deep Black</div>
+          </div>
+          <div class="vals">
+            HEX · 0A0A0A<br>
+            RGB · 10 10 10<br>
+            CMYK · 0 0 0 100<br>
+            PMS · BLACK 6 C
+          </div>
+        </div>
+      </div>
+      <div class="swatch s-gold">
+        <div class="chip"></div>
+        <div class="meta">
+          <div>
+            <div class="smallcaps" style="color:#6b5520">Primary</div>
+            <div class="name" style="margin-top:8px">Antique Gold</div>
+          </div>
+          <div class="vals">
+            HEX · C9A84C<br>
+            RGB · 201 168 76<br>
+            CMYK · 18 30 80 5<br>
+            PMS · 871 C
+          </div>
+        </div>
+      </div>
+      <div class="swatch s-goldlight">
+        <div class="chip"></div>
+        <div class="meta">
+          <div>
+            <div class="smallcaps" style="color:#7a6420">Accent</div>
+            <div class="name" style="margin-top:8px">Light Gold</div>
+          </div>
+          <div class="vals">
+            HEX · E8C96D<br>
+            RGB · 232 201 109<br>
+            CMYK · 8 18 65 0<br>
+            PMS · 7563 C
+          </div>
+        </div>
+      </div>
+      <div class="swatch s-offwhite">
+        <div class="chip"></div>
+        <div class="meta">
+          <div>
+            <div class="smallcaps" style="color:#6b6b6b">Ground</div>
+            <div class="name" style="margin-top:8px">Off-White</div>
+          </div>
+          <div class="vals">
+            HEX · F5F0E8<br>
+            RGB · 245 240 232<br>
+            CMYK · 3 4 9 0<br>
+            PMS · 9224 C
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:50px;max-width:760px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#6b6b6b;line-height:1.5">Antique Gold sits on Deep Black or Off-White only. Light Gold is reserved for the brilliant and for editorial accents. The palette is held flat — no metallic gradients, no tonal washes.</p>
+  </section>
+
+  <!-- ════════ SPREAD 05 · Typography ════════ -->
+  <section class="spread" aria-label="Chapter V — Typography">
+    <div class="spread-header">
+      <div>
+        <div class="section-eyebrow"><span class="rule" aria-hidden="true"></span><span>Chapter V · Typography</span></div>
+        <h2 class="section-title">Three Voices.</h2>
+        <p class="section-sub">A Didot-derived display, a Garamond italic for editorial, an Inter for the quiet machinery of labels and addresses.</p>
+      </div>
+      <div class="spread-header num">№ 05 / 08</div>
+    </div>
+
+    <div class="type-spec type-display">
+      <div class="label">Display<span class="role">Bodoni Moda — 96 / Regular</span></div>
+      <div>
+        <div class="sample">Aa Vv — Veluare</div>
+        <div class="meta">Editorial headlines · campaign covers · seasonal titles</div>
+      </div>
+    </div>
+
+    <div class="type-spec type-wordmark">
+      <div class="label">Wordmark<span class="role">Bodoni Moda — Tracked .32em</span></div>
+      <div>
+        <div class="sample">VELUARE</div>
+        <div class="meta">Logotype only · never re-set in body copy · never condensed</div>
+      </div>
+    </div>
+
+    <div class="type-spec type-sub">
+      <div class="label">Editorial<span class="role">Cormorant Garamond — Italic 38</span></div>
+      <div>
+        <div class="sample">A maison of high jewellery, sketched in Milano since MMXXVI.</div>
+        <div class="meta">Pull-quotes · product descriptions · captions</div>
+      </div>
+    </div>
+
+    <div class="type-spec type-caps">
+      <div class="label">Small Caps<span class="role">Inter — Tracked .42em</span></div>
+      <div>
+        <div class="sample">Jewelry &nbsp;◆&nbsp; High Jewelry &nbsp;◆&nbsp; Bespoke</div>
+        <div class="meta">Navigation · section labels · diamond-divided metadata</div>
+      </div>
+    </div>
+
+    <div class="type-spec type-body">
+      <div class="label">Utility<span class="role">Inter — 15 / Light</span></div>
+      <div>
+        <div class="sample">Each Veluare piece is conceived in the atelier on Via della Spiga, cast in 18k gold, and set by hand. Stones are sourced under strict provenance and accompanied by a numbered certificate, sealed with the VA monogram in antique gold foil.</div>
+        <div class="meta">Body copy · correspondence · certificates · packaging inserts</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ SPREAD 06 · Packaging ════════ -->
+  <section class="spread dark" aria-label="Chapter VI — Packaging">
+    <div class="spread-header">
+      <div>
+        <div class="section-eyebrow"><span class="rule" aria-hidden="true"></span><span>Chapter VI · Packaging</span></div>
+        <h2 class="section-title" style="color:var(--offwhite)">The Object Before the Object.</h2>
+        <p class="section-sub">Lacquered black board, gilded interiors, hand-tied silk. The unboxing is the first chapter of the piece.</p>
+      </div>
+      <div class="spread-header num">№ 06 / 08</div>
+    </div>
+
+    <div class="specimens-grid">
+
+      <!-- Jewelry box -->
+      <div class="specimen">
+        <div>
+          <div class="box-topdown" aria-hidden="true">
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
+            <div class="center">
+              <div class="monogram" style="--mg:110px">
+                <div class="ring"></div><div class="ring inner"></div>
+                <div class="va"><span class="v">V</span><span class="a">A</span></div>
+                <div class="brilliant"></div>
+              </div>
+              <div style="font-family:'Bodoni Moda',serif;font-size:14px;letter-spacing:.42em;padding-left:.42em;color:var(--offwhite)">VELUARE</div>
+              <div style="font-size:7px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center">
+                <span>Jewelry</span>
+                <span class="diamond-divider" style="background:var(--gold);width:3px;height:3px" aria-hidden="true"></span>
+                <span>High Jewelry</span>
+              </div>
+            </div>
+          </div>
+          <!-- side view -->
+          <div class="box-side" aria-hidden="true">
+            <div class="lid"></div>
+            <div class="seal-mini">
+              <div class="monogram" style="--mg:54px">
+                <div class="ring"></div>
+                <div class="va"><span class="v">V</span><span class="a">A</span></div>
+                <div class="brilliant"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="caption"><span class="title">Jewelry Box · 180 × 180 × 50 mm</span>Lacquered board · gold foil · matte black</div>
+      </div>
+
+      <!-- Velvet ring box -->
+      <div class="specimen">
+        <div class="ringbox" aria-hidden="true">
+          <div class="lid">
+            <div class="monogram" style="--mg:88px">
+              <div class="ring"></div>
+              <div class="va"><span class="v">V</span><span class="a">A</span></div>
+              <div class="brilliant"></div>
+            </div>
+          </div>
+          <div class="ribbon"></div>
+          <div class="well">
+            <div class="slit" style="position:absolute;bottom:26px"></div>
+            <div class="ring-render"></div>
+          </div>
+        </div>
+        <div class="caption"><span class="title">Velvet Ring Box · 70 × 70 × 55 mm</span>Black velvet · brass hinge · gilded interior</div>
+      </div>
+
+      <!-- Shopping bag -->
+      <div class="specimen">
+        <div class="bag" aria-hidden="true">
+          <div class="handle"></div>
+          <div class="top-fold"></div>
+          <div class="face">
+            <div class="monogram" style="--mg:95px">
+              <div class="ring"></div><div class="ring inner"></div>
+              <div class="va"><span class="v">V</span><span class="a">A</span></div>
+              <div class="brilliant"></div>
+            </div>
+            <div style="font-family:'Bodoni Moda',serif;font-size:14px;letter-spacing:.46em;padding-left:.46em;color:var(--offwhite)">VELUARE</div>
+            <div style="font-size:7px;letter-spacing:.46em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center">
+              <span>Jewelry</span>
+              <span class="diamond-divider" style="background:var(--gold);width:3px;height:3px" aria-hidden="true"></span>
+              <span>High Jewelry</span>
+            </div>
+          </div>
+        </div>
+        <div class="caption"><span class="title">Shopping Bag · 240 × 320 × 100 mm</span>Matte black paper · gold-cord handle</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════ SPREAD 07 · Business Card ════════ -->
+  <section class="spread" aria-label="Chapter VII — Stationery">
+    <div class="spread-header">
+      <div>
+        <div class="section-eyebrow"><span class="rule" aria-hidden="true"></span><span>Chapter VII · Stationery</span></div>
+        <h2 class="section-title">The Calling Card.</h2>
+        <p class="section-sub">Letterpressed on 600 gsm cotton stock. Recto in deep black with gold-foil monogram; verso in off-white with letterpressed details.</p>
+      </div>
+      <div class="spread-header num">№ 07 / 08</div>
+    </div>
+
+    <div class="cards">
+      <div class="card front">
+        <span class="corner-mark tl" aria-hidden="true"></span>
+        <span class="corner-mark br" aria-hidden="true"></span>
+        <div class="monogram" style="--mg:200px" aria-hidden="true">
+          <div class="ring"></div><div class="ring inner"></div>
+          <div class="va"><span class="v">V</span><span class="a">A</span></div>
+          <div class="brilliant"></div>
+        </div>
+      </div>
+      <div class="card back">
+        <div class="top">
+          <div>
+            <div class="smallcaps gold">Maison Veluare</div>
+            <div class="name" style="margin-top:14px">Allegra Vianello</div>
+            <div class="title">Directrice de Création</div>
+          </div>
+          <div class="wordmini">VA</div>
+        </div>
+        <div class="bottom">
+          <address class="contact" style="font-style:normal">
+            Via della Spiga 14<br>
+            20121 Milano · Italia<br>
+            + 39 02 7600 4812
+          </address>
+          <address class="contact" style="text-align:right;font-style:normal">
+            allegra@veluare.com<br>
+            veluare.com<br>
+            @veluare
+          </address>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:center;margin-top:50px;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#6b6b6b">
+      <span>85 × 55 mm</span>
+      <span class="diamond-divider" style="background:var(--gold)" aria-hidden="true"></span>
+      <span>Letterpress + Gold Foil</span>
+      <span class="diamond-divider" style="background:var(--gold)" aria-hidden="true"></span>
+      <span>600 gsm Cotton</span>
+    </div>
+  </section>
+
+  <!-- ════════ SPREAD 08 · Instagram ════════ -->
+  <section class="spread dark" aria-label="Chapter VIII — Social">
+    <div class="spread-header">
+      <div>
+        <div class="section-eyebrow"><span class="rule" aria-hidden="true"></span><span>Chapter VIII · Social</span></div>
+        <h2 class="section-title" style="color:var(--offwhite)">Instagram, Editorial.</h2>
+        <p class="section-sub">Square 1:1, fixed framing, two grounds only — Deep Black or Off-White. Imagery placeholders shown; production uses commissioned photography.</p>
+      </div>
+      <div class="spread-header num">№ 08 / 08</div>
+    </div>
+
+    <div class="ig-wrap">
+
+      <!-- IG 1: announcement -->
+      <figure class="ig" aria-label="Instagram announcement template">
+        <div class="frame" aria-hidden="true"></div>
+        <div class="ig-top">
+          <span style="color:var(--gold)">Maison Veluare</span>
+          <span>MMXXVI</span>
+        </div>
+        <div class="ig-center">
+          <div class="monogram" style="--mg:140px" aria-hidden="true">
+            <div class="ring"></div><div class="ring inner"></div>
+            <div class="va"><span class="v">V</span><span class="a">A</span></div>
+            <div class="brilliant"></div>
+          </div>
+          <div class="ig-sub">— Introducing —</div>
+          <div class="ig-headline">The <em>Vianello</em> Solitaire.</div>
+        </div>
+        <div class="ig-bottom">
+          <div class="meta" style="color:var(--gold)">
+            <span>High Jewelry</span>
+            <span class="diamond-divider" style="background:var(--gold);width:3px;height:3px" aria-hidden="true"></span>
+            <span>Edition 01</span>
+          </div>
+        </div>
+      </figure>
+
+      <!-- IG 2: product still -->
+      <figure class="ig" aria-label="Instagram product still template">
+        <div class="frame" aria-hidden="true"></div>
+        <div class="ig-top">
+          <span style="color:var(--gold)">N° 014 / Vianello</span>
+          <span aria-hidden="true">◆</span>
+        </div>
+        <div class="ig-center">
+          <div class="product-still" aria-hidden="true">
+            <div class="stone"></div>
+            <div class="pp-label">Product still · 1:1 · centered</div>
+          </div>
+        </div>
+        <div class="ig-bottom">
+          <div class="word">VELUARE</div>
+          <div class="meta" style="color:var(--gold)">
+            <span>Jewelry</span>
+            <span class="diamond-divider" style="background:var(--gold);width:3px;height:3px" aria-hidden="true"></span>
+            <span>High Jewelry</span>
+          </div>
+        </div>
+      </figure>
+
+      <!-- IG 3: light editorial -->
+      <figure class="ig light" aria-label="Instagram editorial template">
+        <div class="frame" aria-hidden="true"></div>
+        <div class="ig-top" style="color:#6b6b6b">
+          <span style="color:#7a6420">Atelier Notes</span>
+          <span>N° 03</span>
+        </div>
+        <div class="ig-center">
+          <div class="ig-sub">— Atelier, Milano —</div>
+          <div class="ig-headline" style="color:var(--black)">Cast by hand. <em>Set</em> by patience.</div>
+          <div style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:#6b6b6b">A study in antique gold</div>
+        </div>
+        <div class="ig-bottom">
+          <div class="word" style="color:var(--black)">VELUARE</div>
+        </div>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ════════ COLOPHON ════════ -->
+  <footer class="colophon">
+    <div>
+      <div class="smallcaps gold">Maison Veluare</div>
+      <div style="margin-top:8px;color:rgba(245,240,232,.55)">Brand Identity Manual · Vol. I · MMXXVI</div>
+    </div>
+    <div class="word">VELUARE</div>
+    <div style="text-align:right">
+      <div class="smallcaps gold">Via della Spiga 14 · Milano</div>
+      <div style="margin-top:8px;color:rgba(245,240,232,.55)">© Veluare · All rights reserved</div>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
