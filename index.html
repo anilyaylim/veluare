@@ -65,13 +65,15 @@
   .monogram .va .v, .monogram .va .a { font-family: 'Bodoni Moda', serif; font-weight: 500; font-size: calc(var(--mg, 200px) * .68); color: var(--gold); line-height: 1; display: inline-block; }
   .monogram .va .v { transform: translateX(calc(var(--mg, 200px) * .08)); }
   .monogram .va .a { transform: translateX(calc(var(--mg, 200px) * -.08)); }
-  .monogram .brilliant { position: absolute; left: 50%; top: 50%; width: calc(var(--mg, 200px) * .055); height: calc(var(--mg, 200px) * .055); background: var(--gold-light); transform: translate(-50%,-50%) rotate(45deg); box-shadow: 0 0 0 1px var(--black) inset; }
+  .monogram .brilliant { position: absolute; left: 50%; top: 50%; width: calc(var(--mg, 200px) * .055); height: calc(var(--mg, 200px) * .055); background: var(--gold-light); transform: translate(-50%,-50%) rotate(45deg); }
   .monogram .brilliant::before { content: ""; position: absolute; inset: 18%; background: var(--gold); }
   .monogram .brilliant::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(10,10,10,.5); }
   .monogram.on-light .ring { border-color: var(--black); }
   .monogram.on-light .ring.inner { border-color: rgba(10,10,10,.25); }
   .monogram.on-light .va .v, .monogram.on-light .va .a { color: var(--black); }
-  .monogram.on-light .brilliant { background: var(--gold); box-shadow: 0 0 0 1px var(--offwhite) inset; }
+  .monogram.on-light .brilliant { background: var(--gold); }
+  .monogram.on-warm .ring { border-color: rgba(10,10,10,.55); }
+  .monogram.on-warm .ring.inner { border-color: rgba(10,10,10,.25); }
   .monogram.on-light .brilliant::before { background: var(--gold-light); }
   .monogram.on-light .brilliant::after { background: rgba(245,240,232,.85); }
 
@@ -85,7 +87,8 @@
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(201,168,76,.12);
   }
-  nav .nav-mark { font-family: 'Bodoni Moda', serif; font-size: 13px; letter-spacing: .55em; color: var(--offwhite); text-decoration: none; padding-left: .55em; }
+  nav .nav-mark { font-family: 'Bodoni Moda', serif; font-size: 13px; letter-spacing: .55em; color: var(--offwhite); text-decoration: none; padding-left: .55em; display: flex; align-items: center; gap: 12px; }
+  nav .nav-va { width: 28px; height: 28px; border: 1px solid rgba(201,168,76,.6); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; letter-spacing: .05em; color: var(--gold); flex-shrink: 0; padding-left: 0; font-weight: 500; }
   nav .nav-links { display: flex; gap: 36px; list-style: none; }
   nav .nav-links a { font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: rgba(245,240,232,.92); text-decoration: none; transition: color .25s; }
   nav .nav-links a:hover { color: var(--gold); }
@@ -145,10 +148,10 @@
   .collection { background: var(--warm-bg); padding: 100px 60px; }
   .collection-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; gap: 40px; }
   .collection-header h2 { font-family: 'Bodoni Moda', serif; font-size: clamp(36px, 4vw, 56px); font-weight: 400; letter-spacing: .01em; line-height: 1.05; }
-  .collection-header p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: rgba(10,10,10,.55); max-width: 320px; text-align: right; line-height: 1.5; }
+  .collection-header p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: rgba(10,10,10,.75); max-width: 320px; text-align: right; line-height: 1.5; }
   .pieces-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .piece { position: relative; background: #F2E5B0; aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
-  .piece::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(201,168,76,.04) 0 8px, transparent 8px 20px); }
+  .piece { position: relative; background: #1C1C1C; aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
+  .piece::before { display: none; }
   .piece-stone { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
   .stone-shape { position: relative; }
   .stone-sq { width: 90px; height: 90px; background: var(--gold-light); transform: rotate(45deg); box-shadow: inset 0 0 0 1px var(--gold), 0 20px 40px -10px rgba(0,0,0,.8); position: relative; }
@@ -198,8 +201,8 @@
   .bespoke::before { content: ""; position: absolute; top: 50%; left: 50%; width: min(700px, 90vw); height: min(700px, 90vw); border-radius: 50%; border: 1px solid rgba(201,168,76,.08); transform: translate(-50%,-50%); }
   .bespoke::after { content: ""; position: absolute; top: 50%; left: 50%; width: min(900px, 110vw); height: min(900px, 110vw); border-radius: 50%; border: 1px solid rgba(201,168,76,.05); transform: translate(-50%,-50%); }
   .bespoke-inner { position: relative; z-index: 1; max-width: 660px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 28px; }
-  .bespoke-eyebrow { font-size: 10px; letter-spacing: .42em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 16px; }
-  .bespoke-eyebrow .rule { width: 32px; height: 1px; background: var(--gold); }
+  .bespoke-eyebrow { font-size: 10px; letter-spacing: .42em; text-transform: uppercase; color: var(--black); display: flex; align-items: center; gap: 16px; }
+  .bespoke-eyebrow .rule { width: 32px; height: 1px; background: var(--black); }
   .bespoke h2 { font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(40px, 6vw, 68px); line-height: 1.05; letter-spacing: .01em; }
   .bespoke-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; font-weight: 300; color: rgba(10,10,10,.6); line-height: 1.5; }
   .bespoke p { font-size: 14px; line-height: 1.8; color: rgba(10,10,10,.5); max-width: 460px; }
@@ -277,7 +280,7 @@
 
 <!-- ── Navigasyon ── -->
 <nav>
-  <a class="nav-mark" href="#">VELUARE</a>
+  <a class="nav-mark" href="#"><span class="nav-va">VA</span>VELUARE</a>
   <ul class="nav-links">
     <li><a href="#collection"><span class="lang-tr">Koleksiyon</span><span class="lang-en">Collection</span></a></li>
     <li><a href="#atelier"><span class="lang-tr">Atölye</span><span class="lang-en">Atelier</span></a></li>
@@ -318,7 +321,7 @@
     <span class="diamond" style="background:var(--gold)"></span>
   </div>
   <div class="hero-monogram">
-    <div class="monogram" style="--mg:clamp(140px,20vw,220px)">
+    <div class="monogram on-warm" style="--mg:clamp(140px,20vw,220px)">
       <div class="ring"></div>
       <div class="ring inner"></div>
       <div class="va"><span class="v">V</span><span class="a">A</span></div>
@@ -530,7 +533,7 @@
       <span class="lang-tr">Özel Sipariş</span><span class="lang-en">Bespoke Commission</span>
       <span class="rule"></span>
     </div>
-    <div class="monogram" style="--mg:clamp(80px,12vw,120px)">
+    <div class="monogram on-warm" style="--mg:clamp(80px,12vw,120px)">
       <div class="ring"></div>
       <div class="ring inner"></div>
       <div class="va"><span class="v">V</span><span class="a">A</span></div>
