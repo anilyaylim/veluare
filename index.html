@@ -10,12 +10,12 @@
 </style>
 <style>
   :root {
-    --black: #1C1408;
+    --black: #3A2710;
     --gold: #C9A84C;
     --gold-light: #E8C96D;
     --offwhite: #F5F0E8;
     --hairline: rgba(201,168,76,.28);
-    --hairline-dark: rgba(28,20,8,.18);
+    --hairline-dark: rgba(58,39,16,.18);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,14 +79,14 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
     padding: 22px 60px;
-    background: rgba(10,10,10,.88);
+    background: rgba(58,39,16,.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(201,168,76,.12);
   }
   nav .nav-mark { font-family: 'Bodoni Moda', serif; font-size: 13px; letter-spacing: .55em; color: var(--offwhite); text-decoration: none; padding-left: .55em; }
   nav .nav-links { display: flex; gap: 36px; list-style: none; }
-  nav .nav-links a { font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: rgba(245,240,232,.6); text-decoration: none; transition: color .25s; }
+  nav .nav-links a { font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: rgba(245,240,232,.92); text-decoration: none; transition: color .25s; }
   nav .nav-links a:hover { color: var(--gold); }
   nav .nav-right { display: flex; align-items: center; gap: 20px; }
   nav .nav-cta { font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); text-decoration: none; border: 1px solid rgba(201,168,76,.45); padding: 9px 20px; transition: border-color .25s, color .25s; white-space: nowrap; }
@@ -95,7 +95,7 @@
   /* hamburger */
   .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
   .nav-hamburger span { display: block; width: 22px; height: 1px; background: var(--offwhite); transition: transform .3s, opacity .3s; }
-  .nav-mobile { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; background: rgba(10,10,10,.97); flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+  .nav-mobile { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; background: rgba(50,33,10,.98); flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
   .nav-mobile.open { display: flex; }
   .nav-mobile a { font-family: 'Bodoni Moda', serif; font-size: 32px; font-weight: 400; letter-spacing: .08em; color: var(--offwhite); text-decoration: none; }
   .nav-mobile a:hover { color: var(--gold); }
