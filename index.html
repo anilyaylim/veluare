@@ -87,10 +87,7 @@
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(201,168,76,.12);
   }
-  nav .nav-mark { font-family: 'Bodoni Moda', serif; font-size: 13px; letter-spacing: .55em; color: var(--offwhite); text-decoration: none; padding-left: .55em; display: flex; align-items: center; gap: 12px; }
-  nav .nav-va { width: 40px; height: 40px; border: 1px solid rgba(201,168,76,.6); border-radius: 50%; display: flex; align-items: center; justify-content: center; gap: 1px; flex-shrink: 0; position: relative; }
-  nav .nav-va .nv-v, nav .nav-va .nv-a { font-family: 'Bodoni Moda', serif; font-size: 12px; font-weight: 500; color: var(--gold); line-height: 1; }
-  nav .nav-va .nv-dot { width: 5px; height: 5px; background: var(--gold-light); transform: rotate(45deg); flex-shrink: 0; position: relative; top: -1px; }
+  nav .nav-mark { font-family: 'Bodoni Moda', serif; font-size: 16px; letter-spacing: .55em; color: var(--offwhite); text-decoration: none; padding-left: .55em; }
   nav .nav-links { display: flex; gap: 36px; list-style: none; }
   nav .nav-links a { font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: rgba(245,240,232,.92); text-decoration: none; transition: color .25s; }
   nav .nav-links a:hover { color: var(--gold); }
@@ -101,11 +98,15 @@
   /* hamburger */
   .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
   .nav-hamburger span { display: block; width: 22px; height: 1px; background: var(--offwhite); transition: transform .3s, opacity .3s; }
-  .nav-mobile { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; background: rgba(10,10,10,.98); flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+  .nav-mobile { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; background: rgba(245,240,232,.97); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
   .nav-mobile.open { display: flex; }
-  .nav-mobile a { font-family: 'Bodoni Moda', serif; font-size: 32px; font-weight: 400; letter-spacing: .08em; color: var(--offwhite); text-decoration: none; }
+  .nav-mobile a { font-family: 'Bodoni Moda', serif; font-size: 32px; font-weight: 400; letter-spacing: .08em; color: var(--black); text-decoration: none; }
   .nav-mobile a:hover { color: var(--gold); }
-  .nav-mobile .close-btn { position: absolute; top: 24px; right: 24px; font-size: 20px; color: var(--offwhite); cursor: pointer; background: none; border: 1px solid rgba(245,240,232,.25); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; transition: border-color .2s, color .2s; line-height: 1; }
+  .nav-mobile .mobile-top { position: absolute; top: 24px; right: 24px; display: flex; align-items: center; gap: 12px; }
+  .nav-mobile .mobile-lang-btn { font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: rgba(10,10,10,.45); cursor: pointer; border: none; background: none; font-family: 'Inter', sans-serif; padding: 4px 6px; transition: color .2s; }
+  .nav-mobile .mobile-lang-btn.active { color: var(--gold); }
+  .nav-mobile .mobile-lang-sep { color: rgba(10,10,10,.2); font-size: 10px; }
+  .nav-mobile .close-btn { font-size: 20px; color: var(--black); cursor: pointer; background: none; border: 1px solid rgba(10,10,10,.25); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; transition: border-color .2s, color .2s; line-height: 1; }
   .nav-mobile .close-btn:hover { border-color: var(--gold); color: var(--gold); }
 
   /* ── hero ── */
@@ -282,7 +283,7 @@
 
 <!-- ── Navigasyon ── -->
 <nav>
-  <a class="nav-mark" href="#"><span class="nav-va"><span class="nv-v">V</span><span class="nv-dot"></span><span class="nv-a">A</span></span>VELUARE</a>
+  <a class="nav-mark" href="#">VELUARE</a>
   <ul class="nav-links">
     <li><a href="#collection"><span class="lang-tr">Koleksiyon</span><span class="lang-en">Collection</span></a></li>
     <li><a href="#atelier"><span class="lang-tr">Atölye</span><span class="lang-en">Atelier</span></a></li>
@@ -306,7 +307,12 @@
 
 <!-- Mobil Menü -->
 <div class="nav-mobile" id="nav-mobile">
-  <button class="close-btn" onclick="closeMenu()">✕</button>
+  <div class="mobile-top">
+    <button class="mobile-lang-btn active" id="mbtn-tr" onclick="setLang('tr')">TR</button>
+    <span class="mobile-lang-sep">/</span>
+    <button class="mobile-lang-btn" id="mbtn-en" onclick="setLang('en')">EN</button>
+    <button class="close-btn" onclick="closeMenu()">✕</button>
+  </div>
   <a href="#collection" onclick="closeMenu()"><span class="lang-tr">Koleksiyon</span><span class="lang-en">Collection</span></a>
   <a href="#atelier" onclick="closeMenu()"><span class="lang-tr">Atölye</span><span class="lang-en">Atelier</span></a>
   <a href="#bespoke" onclick="closeMenu()"><span class="lang-tr">Özel Sipariş</span><span class="lang-en">Bespoke</span></a>
@@ -643,6 +649,8 @@
     document.documentElement.lang = lang;
     document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('mbtn-tr').classList.toggle('active', lang === 'tr');
+    document.getElementById('mbtn-en').classList.toggle('active', lang === 'en');
   }
 
   function openMenu() {
