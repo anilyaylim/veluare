@@ -88,7 +88,9 @@
     border-bottom: 1px solid rgba(201,168,76,.12);
   }
   nav .nav-mark { font-family: 'Bodoni Moda', serif; font-size: 13px; letter-spacing: .55em; color: var(--offwhite); text-decoration: none; padding-left: .55em; display: flex; align-items: center; gap: 12px; }
-  nav .nav-va { width: 28px; height: 28px; border: 1px solid rgba(201,168,76,.6); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; letter-spacing: .05em; color: var(--gold); flex-shrink: 0; padding-left: 0; font-weight: 500; }
+  nav .nav-va { width: 40px; height: 40px; border: 1px solid rgba(201,168,76,.6); border-radius: 50%; display: flex; align-items: center; justify-content: center; gap: 1px; flex-shrink: 0; position: relative; }
+  nav .nav-va .nv-v, nav .nav-va .nv-a { font-family: 'Bodoni Moda', serif; font-size: 12px; font-weight: 500; color: var(--gold); line-height: 1; }
+  nav .nav-va .nv-dot { width: 5px; height: 5px; background: var(--gold-light); transform: rotate(45deg); flex-shrink: 0; position: relative; top: -1px; }
   nav .nav-links { display: flex; gap: 36px; list-style: none; }
   nav .nav-links a { font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: rgba(245,240,232,.92); text-decoration: none; transition: color .25s; }
   nav .nav-links a:hover { color: var(--gold); }
@@ -148,9 +150,9 @@
   .collection { background: var(--warm-bg); padding: 100px 60px; }
   .collection-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; gap: 40px; }
   .collection-header h2 { font-family: 'Bodoni Moda', serif; font-size: clamp(36px, 4vw, 56px); font-weight: 400; letter-spacing: .01em; line-height: 1.05; }
-  .collection-header p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: rgba(10,10,10,.75); max-width: 320px; text-align: right; line-height: 1.5; }
+  .collection-header p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 21px; color: rgba(10,10,10,.75); max-width: 320px; text-align: right; line-height: 1.5; }
   .pieces-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .piece { position: relative; background: #1C1C1C; aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
+  .piece { position: relative; background: #0A0A0A; aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
   .piece::before { display: none; }
   .piece-stone { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
   .stone-shape { position: relative; }
@@ -163,8 +165,8 @@
   .stone-round { width: 90px; height: 90px; background: var(--gold-light); border-radius: 50%; box-shadow: inset 0 0 0 1px var(--gold), 0 20px 40px -10px rgba(0,0,0,.8); position: relative; }
   .stone-round::before { content: ""; position: absolute; inset: 14%; background: var(--gold); border-radius: 50%; }
   .stone-round::after { content: ""; position: absolute; left:0;right:0;top:50%;height:1px;background:rgba(10,10,10,.4); }
-  .piece-frame { position: absolute; inset: 16px; border: 1px solid rgba(201,168,76,.2); pointer-events: none; transition: border-color .4s; }
-  .piece:hover .piece-frame { border-color: rgba(201,168,76,.6); }
+  .piece-frame { position: absolute; inset: 16px; border: 1px solid rgba(232,201,109,.45); pointer-events: none; transition: border-color .4s; }
+  .piece:hover .piece-frame { border-color: rgba(232,201,109,.85); }
   .piece-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 20px; background: linear-gradient(transparent, rgba(10,10,10,.92)); transform: translateY(8px); opacity: 0; transition: opacity .35s, transform .35s; }
   .piece:hover .piece-info { opacity: 1; transform: translateY(0); }
   .piece-name { font-family: 'Bodoni Moda', serif; font-size: 18px; font-weight: 400; letter-spacing: .04em; margin-bottom: 6px; color: var(--offwhite); }
@@ -198,8 +200,8 @@
 
   /* ── bespoke ── */
   .bespoke { background: var(--warm-bg); padding: 120px 40px; text-align: center; position: relative; overflow: hidden; }
-  .bespoke::before { content: ""; position: absolute; top: 50%; left: 50%; width: min(700px, 90vw); height: min(700px, 90vw); border-radius: 50%; border: 1px solid rgba(201,168,76,.08); transform: translate(-50%,-50%); }
-  .bespoke::after { content: ""; position: absolute; top: 50%; left: 50%; width: min(900px, 110vw); height: min(900px, 110vw); border-radius: 50%; border: 1px solid rgba(201,168,76,.05); transform: translate(-50%,-50%); }
+  .bespoke::before { content: ""; position: absolute; top: 50%; left: 50%; width: min(700px, 90vw); height: min(700px, 90vw); border-radius: 50%; border: 1px solid rgba(201,168,76,.38); transform: translate(-50%,-50%); }
+  .bespoke::after { content: ""; position: absolute; top: 50%; left: 50%; width: min(900px, 110vw); height: min(900px, 110vw); border-radius: 50%; border: 1px solid rgba(201,168,76,.22); transform: translate(-50%,-50%); }
   .bespoke-inner { position: relative; z-index: 1; max-width: 660px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 28px; }
   .bespoke-eyebrow { font-size: 10px; letter-spacing: .42em; text-transform: uppercase; color: var(--black); display: flex; align-items: center; gap: 16px; }
   .bespoke-eyebrow .rule { width: 32px; height: 1px; background: var(--black); }
@@ -280,7 +282,7 @@
 
 <!-- ── Navigasyon ── -->
 <nav>
-  <a class="nav-mark" href="#"><span class="nav-va">VA</span>VELUARE</a>
+  <a class="nav-mark" href="#"><span class="nav-va"><span class="nv-v">V</span><span class="nv-dot"></span><span class="nv-a">A</span></span>VELUARE</a>
   <ul class="nav-links">
     <li><a href="#collection"><span class="lang-tr">Koleksiyon</span><span class="lang-en">Collection</span></a></li>
     <li><a href="#atelier"><span class="lang-tr">Atölye</span><span class="lang-en">Atelier</span></a></li>
@@ -444,7 +446,7 @@
   </div>
 
   <div style="text-align:center;margin-top:52px">
-    <a class="btn btn-ghost" href="#contact">
+    <a class="btn btn-primary" href="#contact">
       <span class="lang-tr">Tüm Koleksiyonu Gör</span><span class="lang-en">View Full Collection</span>
     </a>
   </div>
