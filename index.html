@@ -19,23 +19,19 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; font-size: 16px; }
-  body { background: var(--black); color: var(--offwhite); font-family: 'Inter', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; width: 100%; }
+  body { background: var(--black); color: var(--offwhite); font-family: 'Inter', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; overflow-x: hidden; width: 100%; margin: 0; }
 
   .gold { color: var(--gold); }
   .smallcaps { font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: .38em; text-transform: uppercase; font-weight: 400; }
   .diamond { display: inline-block; width: 4px; height: 4px; background: currentColor; transform: rotate(45deg); vertical-align: middle; margin: 0 .8em; position: relative; top: -1px; }
 
   /* ── dil gizle/göster ── */
-  [data-lang] { display: none; }
-  html[lang="tr"] [data-lang="tr"] { display: inline; }
-  html[lang="en"] [data-lang="en"] { display: inline; }
-  [data-lang-block] { display: none; }
-  html[lang="tr"] [data-lang-block="tr"] { display: block; }
-  html[lang="en"] [data-lang-block="en"] { display: block; }
-  [data-lang-flex] { display: none; }
-  html[lang="tr"] [data-lang-flex="tr"] { display: flex; }
-  html[lang="en"] [data-lang-flex="en"] { display: flex; }
+  .lang-tr, .lang-en { display: none; }
+  html[lang="tr"] .lang-tr { display: inline; }
+  html[lang="en"] .lang-en { display: inline; }
+  html[lang="tr"] .lang-tr.block { display: block; }
+  html[lang="en"] .lang-en.block { display: block; }
 
   /* ── dil seçici ── */
   .lang-switch {
@@ -282,10 +278,10 @@
 <nav>
   <a class="nav-mark" href="#">VELUARE</a>
   <ul class="nav-links">
-    <li><a href="#collection"><span data-lang="tr">Koleksiyon</span><span data-lang="en">Collection</span></a></li>
-    <li><a href="#atelier"><span data-lang="tr">Atölye</span><span data-lang="en">Atelier</span></a></li>
-    <li><a href="#bespoke"><span data-lang="tr">Özel Sipariş</span><span data-lang="en">Bespoke</span></a></li>
-    <li><a href="#contact"><span data-lang="tr">İletişim</span><span data-lang="en">Contact</span></a></li>
+    <li><a href="#collection"><span class="lang-tr">Koleksiyon</span><span class="lang-en">Collection</span></a></li>
+    <li><a href="#atelier"><span class="lang-tr">Atölye</span><span class="lang-en">Atelier</span></a></li>
+    <li><a href="#bespoke"><span class="lang-tr">Özel Sipariş</span><span class="lang-en">Bespoke</span></a></li>
+    <li><a href="#contact"><span class="lang-tr">İletişim</span><span class="lang-en">Contact</span></a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-switch">
@@ -294,7 +290,7 @@
       <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
     </div>
     <a class="nav-cta" href="#contact">
-      <span data-lang="tr">Randevu</span><span data-lang="en">Appointment</span>
+      <span class="lang-tr">Randevu</span><span class="lang-en">Appointment</span>
     </a>
     <div class="nav-hamburger" onclick="openMenu()">
       <span></span><span></span><span></span>
@@ -305,19 +301,19 @@
 <!-- Mobil Menü -->
 <div class="nav-mobile" id="nav-mobile">
   <button class="close-btn" onclick="closeMenu()">✕</button>
-  <a href="#collection" onclick="closeMenu()"><span data-lang="tr">Koleksiyon</span><span data-lang="en">Collection</span></a>
-  <a href="#atelier" onclick="closeMenu()"><span data-lang="tr">Atölye</span><span data-lang="en">Atelier</span></a>
-  <a href="#bespoke" onclick="closeMenu()"><span data-lang="tr">Özel Sipariş</span><span data-lang="en">Bespoke</span></a>
-  <a href="#contact" onclick="closeMenu()"><span data-lang="tr">İletişim</span><span data-lang="en">Contact</span></a>
-  <a href="#contact" onclick="closeMenu()" style="color:var(--gold);font-size:20px"><span data-lang="tr">Randevu</span><span data-lang="en">Appointment</span></a>
+  <a href="#collection" onclick="closeMenu()"><span class="lang-tr">Koleksiyon</span><span class="lang-en">Collection</span></a>
+  <a href="#atelier" onclick="closeMenu()"><span class="lang-tr">Atölye</span><span class="lang-en">Atelier</span></a>
+  <a href="#bespoke" onclick="closeMenu()"><span class="lang-tr">Özel Sipariş</span><span class="lang-en">Bespoke</span></a>
+  <a href="#contact" onclick="closeMenu()"><span class="lang-tr">İletişim</span><span class="lang-en">Contact</span></a>
+  <a href="#contact" onclick="closeMenu()" style="color:var(--gold);font-size:20px"><span class="lang-tr">Randevu</span><span class="lang-en">Appointment</span></a>
 </div>
 
 <!-- ── Hero ── -->
 <section class="hero" id="hero">
   <div class="hero-eyebrow">
     <span class="diamond" style="background:var(--gold)"></span>
-    <span data-lang="tr">Maison Veluare · Milano MMXXVI</span>
-    <span data-lang="en">Maison Veluare · Milano MMXXVI</span>
+    <span class="lang-tr">Maison Veluare · Milano MMXXVI</span>
+    <span class="lang-en">Maison Veluare · Milano MMXXVI</span>
     <span class="diamond" style="background:var(--gold)"></span>
   </div>
   <div class="hero-monogram">
@@ -330,23 +326,23 @@
   </div>
   <div class="hero-wordmark">VELUARE</div>
   <div class="hero-sub">
-    <span data-lang="tr">Yüksek Mücevherat</span><span data-lang="en">High Jewelry</span>
+    <span class="lang-tr">Yüksek Mücevherat</span><span class="lang-en">High Jewelry</span>
     <span class="diamond" style="background:var(--gold)"></span>
-    <span data-lang="tr">Mücevherat</span><span data-lang="en">Jewelry</span>
+    <span class="lang-tr">Mücevherat</span><span class="lang-en">Jewelry</span>
     <span class="diamond" style="background:var(--gold)"></span>
-    <span data-lang="tr">Özel Tasarım</span><span data-lang="en">Bespoke</span>
+    <span class="lang-tr">Özel Tasarım</span><span class="lang-en">Bespoke</span>
   </div>
   <div class="hero-cta">
     <a class="btn btn-primary" href="#collection">
-      <span data-lang="tr">Koleksiyonu Keşfet</span><span data-lang="en">Discover Collection</span>
+      <span class="lang-tr">Koleksiyonu Keşfet</span><span class="lang-en">Discover Collection</span>
     </a>
     <a class="btn btn-ghost" href="#bespoke">
-      <span data-lang="tr">Özel Sipariş Ver</span><span data-lang="en">Commission a Piece</span>
+      <span class="lang-tr">Özel Sipariş Ver</span><span class="lang-en">Commission a Piece</span>
     </a>
   </div>
   <div class="scroll-cue" aria-hidden="true">
     <div class="line"></div>
-    <span class="label"><span data-lang="tr">Kaydır</span><span data-lang="en">Scroll</span></span>
+    <span class="label"><span class="lang-tr">Kaydır</span><span class="lang-en">Scroll</span></span>
   </div>
 </section>
 
@@ -355,28 +351,28 @@
   <div class="intro-left">
     <div class="intro-eyebrow">
       <span class="rule"></span>
-      <span><span data-lang="tr">Maison</span><span data-lang="en">The Maison</span></span>
+      <span><span class="lang-tr">Maison</span><span class="lang-en">The Maison</span></span>
     </div>
     <h2 class="intro-headline">
-      <span data-lang-block="tr">Taviz<br>vermeden<br>işlenmiş.</span>
-      <span data-lang-block="en">Crafted<br>without<br>compromise.</span>
+      <span class="lang-tr block">Taviz<br>vermeden<br>işlenmiş.</span>
+      <span class="lang-en block">Crafted<br>without<br>compromise.</span>
     </h2>
   </div>
   <div class="intro-right">
     <p class="intro-quote">
-      <span data-lang="tr">"Her parça, kuyumcunun eli ile taşın ruhunun arasında bir anlaşmadır."</span>
-      <span data-lang="en">"Each piece is a treaty between the goldsmith's hand and the stone's soul."</span>
+      <span class="lang-tr">"Her parça, kuyumcunun eli ile taşın ruhunun arasında bir anlaşmadır."</span>
+      <span class="lang-en">"Each piece is a treaty between the goldsmith's hand and the stone's soul."</span>
     </p>
     <p class="intro-body">
-      <span data-lang="tr">Veluare, seri üretime karşı bir yanıt olarak Via della Spiga'da hayat buldu — her yüzük, kolye ve soliterin 18 ayar altın dökülerek tek bir çift el tarafından işlendiği bir maison. Taşlar doğal ışık altında seçiliyor, köken belgesi ile birlikte teslim ediliyor; her sertifika, antik altın folyo ile VA monogramı mührü taşıyor.</span>
-      <span data-lang="en">Veluare was conceived on Via della Spiga as an answer to mass production — a maison where every ring, collar and solitaire is cast in 18-karat gold and set by a single pair of hands. Stones are selected under natural light, sourced with provenance, and accompanied by a numbered certificate sealed with the VA monogram in antique gold foil.</span>
+      <span class="lang-tr">Veluare, seri üretime karşı bir yanıt olarak Via della Spiga'da hayat buldu — her yüzük, kolye ve soliterin 18 ayar altın dökülerek tek bir çift el tarafından işlendiği bir maison. Taşlar doğal ışık altında seçiliyor, köken belgesi ile birlikte teslim ediliyor; her sertifika, antik altın folyo ile VA monogramı mührü taşıyor.</span>
+      <span class="lang-en">Veluare was conceived on Via della Spiga as an answer to mass production — a maison where every ring, collar and solitaire is cast in 18-karat gold and set by a single pair of hands. Stones are selected under natural light, sourced with provenance, and accompanied by a numbered certificate sealed with the VA monogram in antique gold foil.</span>
     </p>
     <div class="intro-meta">
-      <span data-lang="tr">Milano'da Kuruldu</span><span data-lang="en">Founded in Milano</span>
+      <span class="lang-tr">Milano'da Kuruldu</span><span class="lang-en">Founded in Milano</span>
       <span class="diamond" style="background:var(--gold)"></span>
-      <span data-lang="tr">MMXXVI'dan beri Yüksek Mücevherat</span><span data-lang="en">High Jewelry since MMXXVI</span>
+      <span class="lang-tr">MMXXVI'dan beri Yüksek Mücevherat</span><span class="lang-en">High Jewelry since MMXXVI</span>
       <span class="diamond" style="background:var(--gold)"></span>
-      <span>18k · <span data-lang="tr">Elle İşlenmiş</span><span data-lang="en">Hand-set</span></span>
+      <span>18k · <span class="lang-tr">Elle İşlenmiş</span><span class="lang-en">Hand-set</span></span>
     </div>
   </div>
 </section>
@@ -388,17 +384,17 @@
       <div style="display:flex;align-items:center;gap:16px;margin-bottom:18px">
         <span style="width:48px;height:1px;background:var(--gold);display:block;flex-shrink:0"></span>
         <span class="smallcaps" style="color:var(--gold)">
-          <span data-lang="tr">Güncel Koleksiyon</span><span data-lang="en">Current Collection</span>
+          <span class="lang-tr">Güncel Koleksiyon</span><span class="lang-en">Current Collection</span>
         </span>
       </div>
       <h2>
-        <span data-lang-block="tr">Vianello<br>Solitaire Serisi.</span>
-        <span data-lang-block="en">The Vianello<br>Solitaire Series.</span>
+        <span class="lang-tr block">Vianello<br>Solitaire Serisi.</span>
+        <span class="lang-en block">The Vianello<br>Solitaire Series.</span>
       </h2>
     </div>
     <p>
-      <span data-lang="tr">Üç taş. Üç kesim. Antik altına ve sahteliğin yokluğuna bağlılık.</span>
-      <span data-lang="en">Three stones. Three cuts. One unwavering commitment to antique gold and the absence of artifice.</span>
+      <span class="lang-tr">Üç taş. Üç kesim. Antik altına ve sahteliğin yokluğuna bağlılık.</span>
+      <span class="lang-en">Three stones. Three cuts. One unwavering commitment to antique gold and the absence of artifice.</span>
     </p>
   </div>
 
@@ -409,10 +405,10 @@
       <div class="piece-info">
         <div class="piece-name">Vianello I</div>
         <div class="piece-meta">
-          <span data-lang="tr">Prenses Kesim</span><span data-lang="en">Princess Cut</span>
+          <span class="lang-tr">Prenses Kesim</span><span class="lang-en">Princess Cut</span>
           <span class="diamond" style="background:var(--gold)"></span> 18k
           <span class="diamond" style="background:var(--gold)"></span>
-          <span data-lang="tr">Özel</span><span data-lang="en">Bespoke</span>
+          <span class="lang-tr">Özel</span><span class="lang-en">Bespoke</span>
         </div>
       </div>
     </div>
@@ -422,10 +418,10 @@
       <div class="piece-info">
         <div class="piece-name">Vianello II</div>
         <div class="piece-meta">
-          <span data-lang="tr">Oval Pırıltı</span><span data-lang="en">Oval Brilliant</span>
+          <span class="lang-tr">Oval Pırıltı</span><span class="lang-en">Oval Brilliant</span>
           <span class="diamond" style="background:var(--gold)"></span> 18k
           <span class="diamond" style="background:var(--gold)"></span>
-          <span data-lang="tr">Özel</span><span data-lang="en">Bespoke</span>
+          <span class="lang-tr">Özel</span><span class="lang-en">Bespoke</span>
         </div>
       </div>
     </div>
@@ -435,10 +431,10 @@
       <div class="piece-info">
         <div class="piece-name">Vianello III</div>
         <div class="piece-meta">
-          <span data-lang="tr">Yuvarlak Pırıltı</span><span data-lang="en">Round Brilliant</span>
+          <span class="lang-tr">Yuvarlak Pırıltı</span><span class="lang-en">Round Brilliant</span>
           <span class="diamond" style="background:var(--gold)"></span> 18k
           <span class="diamond" style="background:var(--gold)"></span>
-          <span data-lang="tr">Özel</span><span data-lang="en">Bespoke</span>
+          <span class="lang-tr">Özel</span><span class="lang-en">Bespoke</span>
         </div>
       </div>
     </div>
@@ -446,7 +442,7 @@
 
   <div style="text-align:center;margin-top:52px">
     <a class="btn btn-ghost" href="#contact">
-      <span data-lang="tr">Tüm Koleksiyonu Gör</span><span data-lang="en">View Full Collection</span>
+      <span class="lang-tr">Tüm Koleksiyonu Gör</span><span class="lang-en">View Full Collection</span>
     </a>
   </div>
 </section>
@@ -454,21 +450,21 @@
 <!-- ── Marquee ── -->
 <div class="marquee-strip" aria-hidden="true">
   <div class="marquee-track">
-    <span data-lang="tr">Yüksek Mücevherat</span><span data-lang="en" style="display:none">High Jewelry</span><span class="dot"></span>
+    <span class="lang-tr">Yüksek Mücevherat</span><span class="lang-en">High Jewelry</span><span class="dot"></span>
     <span>Milano</span><span class="dot"></span>
     <span>18k</span><span class="dot"></span>
-    <span data-lang="tr">Elle İşlenmiş</span><span data-lang="en" style="display:none">Hand-set</span><span class="dot"></span>
+    <span class="lang-tr">Elle İşlenmiş</span><span class="lang-en">Hand-set</span><span class="dot"></span>
     <span>Maison Veluare</span><span class="dot"></span>
     <span>MMXXVI</span><span class="dot"></span>
-    <span data-lang="tr">Özel Tasarım</span><span data-lang="en" style="display:none">Bespoke</span><span class="dot"></span>
+    <span class="lang-tr">Özel Tasarım</span><span class="lang-en">Bespoke</span><span class="dot"></span>
     <span>Via della Spiga</span><span class="dot"></span>
-    <span data-lang="tr">Yüksek Mücevherat</span><span data-lang="en" style="display:none">High Jewelry</span><span class="dot"></span>
+    <span class="lang-tr">Yüksek Mücevherat</span><span class="lang-en">High Jewelry</span><span class="dot"></span>
     <span>Milano</span><span class="dot"></span>
     <span>18k</span><span class="dot"></span>
-    <span data-lang="tr">Elle İşlenmiş</span><span data-lang="en" style="display:none">Hand-set</span><span class="dot"></span>
+    <span class="lang-tr">Elle İşlenmiş</span><span class="lang-en">Hand-set</span><span class="dot"></span>
     <span>Maison Veluare</span><span class="dot"></span>
     <span>MMXXVI</span><span class="dot"></span>
-    <span data-lang="tr">Özel Tasarım</span><span data-lang="en" style="display:none">Bespoke</span><span class="dot"></span>
+    <span class="lang-tr">Özel Tasarım</span><span class="lang-en">Bespoke</span><span class="dot"></span>
     <span>Via della Spiga</span><span class="dot"></span>
   </div>
 </div>
@@ -485,43 +481,43 @@
       </div>
     </div>
     <div class="atelier-caption">
-      <span data-lang="tr">MMXXVI'dan beri</span><span data-lang="en">Established MMXXVI</span>
+      <span class="lang-tr">MMXXVI'dan beri</span><span class="lang-en">Established MMXXVI</span>
       <em>Via della Spiga, Milano</em>
     </div>
     <div class="atelier-stats">
       <div class="stat">
         <div class="num">18k</div>
-        <div class="label"><span data-lang="tr">Altın Standartı</span><span data-lang="en">Gold Standard</span></div>
+        <div class="label"><span class="lang-tr">Altın Standartı</span><span class="lang-en">Gold Standard</span></div>
       </div>
       <div class="stat">
         <div class="num">01</div>
-        <div class="label"><span data-lang="tr">El Çifti</span><span data-lang="en">Pair of Hands</span></div>
+        <div class="label"><span class="lang-tr">El Çifti</span><span class="lang-en">Pair of Hands</span></div>
       </div>
       <div class="stat">
         <div class="num">∞</div>
-        <div class="label"><span data-lang="tr">Kalıcılık</span><span data-lang="en">Permanence</span></div>
+        <div class="label"><span class="lang-tr">Kalıcılık</span><span class="lang-en">Permanence</span></div>
       </div>
     </div>
   </div>
   <div class="atelier-text">
     <div class="eyebrow">
       <span class="rule"></span>
-      <span><span data-lang="tr">Atölye</span><span data-lang="en">The Atelier</span></span>
+      <span><span class="lang-tr">Atölye</span><span class="lang-en">The Atelier</span></span>
     </div>
     <h2>
-      <span data-lang-block="tr">Altının niyetle<br>buluştuğu yer.</span>
-      <span data-lang-block="en">Where gold<br>meets intention.</span>
+      <span class="lang-tr block">Altının niyetle<br>buluştuğu yer.</span>
+      <span class="lang-en block">Where gold<br>meets intention.</span>
     </h2>
     <blockquote>
-      <span data-lang="tr">Atölye bir fabrika değildir. Malzeme ile ustanın günlerle ölçülen bir konuşmasıdır.</span>
-      <span data-lang="en">The atelier is not a factory. It is a conversation between material and maker — measured in days, not minutes.</span>
+      <span class="lang-tr">Atölye bir fabrika değildir. Malzeme ile ustanın günlerle ölçülen bir konuşmasıdır.</span>
+      <span class="lang-en">The atelier is not a factory. It is a conversation between material and maker — measured in days, not minutes.</span>
     </blockquote>
     <p>
-      <span data-lang="tr">Her Veluare siparişi Via della Spiga'daki bir danışmayla başlar. Müşteri taşı seçer; kuyumcu formu çizer; gerisini zaman halleder. Atölyeyi terk eden hiçbir iki parça aynı değildir; çünkü hiçbir iki taş — ve hiçbir iki insan — aynı değildir.</span>
-      <span data-lang="en">Every Veluare commission begins with a consultation on Via della Spiga. The client selects the stone; the goldsmith traces the form; time does the rest. No two pieces leave the atelier the same, because no two stones — and no two people — are the same.</span>
+      <span class="lang-tr">Her Veluare siparişi Via della Spiga'daki bir danışmayla başlar. Müşteri taşı seçer; kuyumcu formu çizer; gerisini zaman halleder. Atölyeyi terk eden hiçbir iki parça aynı değildir; çünkü hiçbir iki taş — ve hiçbir iki insan — aynı değildir.</span>
+      <span class="lang-en">Every Veluare commission begins with a consultation on Via della Spiga. The client selects the stone; the goldsmith traces the form; time does the rest. No two pieces leave the atelier the same, because no two stones — and no two people — are the same.</span>
     </p>
     <a class="btn btn-ghost" style="border-color:rgba(10,10,10,.25);color:var(--black)" href="#contact">
-      <span data-lang="tr">Ziyaret Planla</span><span data-lang="en">Schedule a Visit</span>
+      <span class="lang-tr">Ziyaret Planla</span><span class="lang-en">Schedule a Visit</span>
     </a>
   </div>
 </section>
@@ -531,7 +527,7 @@
   <div class="bespoke-inner">
     <div class="bespoke-eyebrow">
       <span class="rule"></span>
-      <span data-lang="tr">Özel Sipariş</span><span data-lang="en">Bespoke Commission</span>
+      <span class="lang-tr">Özel Sipariş</span><span class="lang-en">Bespoke Commission</span>
       <span class="rule"></span>
     </div>
     <div class="monogram" style="--mg:clamp(80px,12vw,120px)">
@@ -541,19 +537,19 @@
       <div class="brilliant"></div>
     </div>
     <h2>
-      <span data-lang-block="tr">Senin parçan,<br><em style="font-style:italic">sıfırdan inşa edilmiş.</em></span>
-      <span data-lang-block="en">Your piece,<br><em style="font-style:italic">built from nothing.</em></span>
+      <span class="lang-tr block">Senin parçan,<br><em style="font-style:italic">sıfırdan inşa edilmiş.</em></span>
+      <span class="lang-en block">Your piece,<br><em style="font-style:italic">built from nothing.</em></span>
     </h2>
     <p class="bespoke-quote">
-      <span data-lang="tr">Bir Veluare özel siparişi tek bir konuşmayla başlar ve ikimizden de uzun yaşayacak bir nesneyle biter.</span>
-      <span data-lang="en">A bespoke Veluare commission begins with a single conversation and ends with an object that will outlast both of us.</span>
+      <span class="lang-tr">Bir Veluare özel siparişi tek bir konuşmayla başlar ve ikimizden de uzun yaşayacak bir nesneyle biter.</span>
+      <span class="lang-en">A bespoke Veluare commission begins with a single conversation and ends with an object that will outlast both of us.</span>
     </p>
     <p>
-      <span data-lang="tr">Altı ila on dört hafta. İlk eskiz, balmumu modeli, son prova. Her taş sizin brifinize göre seçilir. Atölyeyi terk etmeden önce her gram altın tartılır.</span>
-      <span data-lang="en">Six to fourteen weeks. An initial sketch, a wax model, a final fitting. Every stone sourced to your brief. Every gram of gold weighed before it leaves the atelier.</span>
+      <span class="lang-tr">Altı ila on dört hafta. İlk eskiz, balmumu modeli, son prova. Her taş sizin brifinize göre seçilir. Atölyeyi terk etmeden önce her gram altın tartılır.</span>
+      <span class="lang-en">Six to fourteen weeks. An initial sketch, a wax model, a final fitting. Every stone sourced to your brief. Every gram of gold weighed before it leaves the atelier.</span>
     </p>
     <a class="btn btn-primary" href="#contact" style="margin-top:8px">
-      <span data-lang="tr">Sipariş Başlat</span><span data-lang="en">Begin a Commission</span>
+      <span class="lang-tr">Sipariş Başlat</span><span class="lang-en">Begin a Commission</span>
     </a>
   </div>
 </section>
@@ -562,12 +558,12 @@
 <section class="contact-band" id="contact">
   <div class="contact-left">
     <h2>
-      <span data-lang-block="tr">Atölyeye<br>yakın kal.</span>
-      <span data-lang-block="en">Stay close<br>to the atelier.</span>
+      <span class="lang-tr block">Atölyeye<br>yakın kal.</span>
+      <span class="lang-en block">Stay close<br>to the atelier.</span>
     </h2>
     <p>
-      <span data-lang="tr">Özel ön gösterimler, koleksiyon notları ve atölye davetleri — nadir ve özenle iletilir.</span>
-      <span data-lang="en">Private previews, collection notes, and invitations to the atelier — delivered rarely and with intention.</span>
+      <span class="lang-tr">Özel ön gösterimler, koleksiyon notları ve atölye davetleri — nadir ve özenle iletilir.</span>
+      <span class="lang-en">Private previews, collection notes, and invitations to the atelier — delivered rarely and with intention.</span>
     </p>
   </div>
   <form class="contact-form" onsubmit="return false">
@@ -577,11 +573,11 @@
     </div>
     <input class="field" type="email" placeholder="E-posta" autocomplete="email" />
     <button class="form-submit" type="submit">
-      <span data-lang="tr">Yazışma Talebi</span><span data-lang="en">Request Correspondence</span>
+      <span class="lang-tr">Yazışma Talebi</span><span class="lang-en">Request Correspondence</span>
     </button>
     <p class="form-note">
-      <span data-lang="tr">Dikkatinizi hak edenden fazlası gönderilmez.</span>
-      <span data-lang="en">No newsletters. No frequency. Only what is worth your attention.</span>
+      <span class="lang-tr">Dikkatinizi hak edenden fazlası gönderilmez.</span>
+      <span class="lang-en">No newsletters. No frequency. Only what is worth your attention.</span>
     </p>
   </form>
 </section>
@@ -592,30 +588,30 @@
     <div>
       <span class="footer-wordmark">VELUARE</span>
       <p class="footer-tagline">
-        <span data-lang="tr">İtalyan haute couture mücevherat. Milano'da tasarlanmış. Altın dökümlü. Elle işlenmiş.</span>
-        <span data-lang="en">Italian haute couture jewelry. Conceived in Milano. Cast in gold. Set by hand.</span>
+        <span class="lang-tr">İtalyan haute couture mücevherat. Milano'da tasarlanmış. Altın dökümlü. Elle işlenmiş.</span>
+        <span class="lang-en">Italian haute couture jewelry. Conceived in Milano. Cast in gold. Set by hand.</span>
       </p>
     </div>
     <div class="footer-col">
-      <h4><span data-lang="tr">Maison</span><span data-lang="en">Maison</span></h4>
+      <h4><span class="lang-tr">Maison</span><span class="lang-en">Maison</span></h4>
       <ul>
-        <li><a href="#"><span data-lang="tr">Atölye</span><span data-lang="en">The Atelier</span></a></li>
-        <li><a href="#"><span data-lang="tr">Felsefe</span><span data-lang="en">Philosophy</span></a></li>
-        <li><a href="#"><span data-lang="tr">Ustalar</span><span data-lang="en">Craftsmen</span></a></li>
-        <li><a href="#"><span data-lang="tr">Basın</span><span data-lang="en">Press</span></a></li>
+        <li><a href="#"><span class="lang-tr">Atölye</span><span class="lang-en">The Atelier</span></a></li>
+        <li><a href="#"><span class="lang-tr">Felsefe</span><span class="lang-en">Philosophy</span></a></li>
+        <li><a href="#"><span class="lang-tr">Ustalar</span><span class="lang-en">Craftsmen</span></a></li>
+        <li><a href="#"><span class="lang-tr">Basın</span><span class="lang-en">Press</span></a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4><span data-lang="tr">Mücevherat</span><span data-lang="en">Jewelry</span></h4>
+      <h4><span class="lang-tr">Mücevherat</span><span class="lang-en">Jewelry</span></h4>
       <ul>
         <li><a href="#">Vianello Serisi</a></li>
-        <li><a href="#"><span data-lang="tr">Özel Tasarım</span><span data-lang="en">Bespoke</span></a></li>
-        <li><a href="#"><span data-lang="tr">Yüksek Mücevherat</span><span data-lang="en">High Jewelry</span></a></li>
-        <li><a href="#"><span data-lang="tr">Arşiv</span><span data-lang="en">Archive</span></a></li>
+        <li><a href="#"><span class="lang-tr">Özel Tasarım</span><span class="lang-en">Bespoke</span></a></li>
+        <li><a href="#"><span class="lang-tr">Yüksek Mücevherat</span><span class="lang-en">High Jewelry</span></a></li>
+        <li><a href="#"><span class="lang-tr">Arşiv</span><span class="lang-en">Archive</span></a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4><span data-lang="tr">Ziyaret</span><span data-lang="en">Visit</span></h4>
+      <h4><span class="lang-tr">Ziyaret</span><span class="lang-en">Visit</span></h4>
       <ul>
         <li><a href="#">Via della Spiga 14</a></li>
         <li><a href="#">20121 Milano · Italia</a></li>
@@ -625,11 +621,11 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© MMXXVI Veluare · <span data-lang="tr">Tüm hakları saklıdır</span><span data-lang="en">All rights reserved</span></span>
+    <span>© MMXXVI Veluare · <span class="lang-tr">Tüm hakları saklıdır</span><span class="lang-en">All rights reserved</span></span>
     <span>
-      <a href="#"><span data-lang="tr">Gizlilik</span><span data-lang="en">Privacy</span></a>
+      <a href="#"><span class="lang-tr">Gizlilik</span><span class="lang-en">Privacy</span></a>
       <span class="diamond" style="background:rgba(245,240,232,.2);margin:0 .6em"></span>
-      <a href="#"><span data-lang="tr">Yasal</span><span data-lang="en">Legal</span></a>
+      <a href="#"><span class="lang-tr">Yasal</span><span class="lang-en">Legal</span></a>
       <span class="diamond" style="background:rgba(245,240,232,.2);margin:0 .6em"></span>
       <a href="#">@veluare</a>
     </span>
@@ -642,10 +638,6 @@
     document.documentElement.lang = lang;
     document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-    // marquee içindeki span'ları düzelt (data-lang ile yönetilmiyor)
-    document.querySelectorAll('.marquee-track [data-lang]').forEach(el => {
-      el.style.display = (el.dataset.lang === lang) ? 'inline' : 'none';
-    });
   }
 
   function openMenu() {
