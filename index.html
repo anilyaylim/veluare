@@ -10,12 +10,12 @@
 </style>
 <style>
   :root {
-    --black: #3A2710;
+    --black: #4D1E2A;
     --gold: #C9A84C;
     --gold-light: #E8C96D;
     --offwhite: #F5F0E8;
     --hairline: rgba(201,168,76,.28);
-    --hairline-dark: rgba(58,39,16,.18);
+    --hairline-dark: rgba(77,30,42,.18);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,7 +79,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
     padding: 22px 60px;
-    background: rgba(58,39,16,.92);
+    background: rgba(10,10,10,.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(201,168,76,.12);
@@ -95,7 +95,7 @@
   /* hamburger */
   .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
   .nav-hamburger span { display: block; width: 22px; height: 1px; background: var(--offwhite); transition: transform .3s, opacity .3s; }
-  .nav-mobile { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; background: rgba(50,33,10,.98); flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+  .nav-mobile { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; background: rgba(10,10,10,.98); flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
   .nav-mobile.open { display: flex; }
   .nav-mobile a { font-family: 'Bodoni Moda', serif; font-size: 32px; font-weight: 400; letter-spacing: .08em; color: var(--offwhite); text-decoration: none; }
   .nav-mobile a:hover { color: var(--gold); }
