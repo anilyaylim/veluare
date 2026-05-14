@@ -10,17 +10,18 @@
 </style>
 <style>
   :root {
-    --black: #4D1E2A;
+    --black: #0A0A0A;
     --gold: #C9A84C;
     --gold-light: #E8C96D;
     --offwhite: #F5F0E8;
+    --warm-bg: #F5EAD0;
     --hairline: rgba(201,168,76,.28);
-    --hairline-dark: rgba(77,30,42,.18);
+    --hairline-dark: rgba(10,10,10,.14);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; width: 100%; }
-  body { background: var(--black); color: var(--offwhite); font-family: 'Inter', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; overflow-x: hidden; width: 100%; margin: 0; }
+  body { background: var(--warm-bg); color: var(--black); font-family: 'Inter', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; overflow-x: hidden; width: 100%; margin: 0; }
 
   .gold { color: var(--gold); }
   .smallcaps { font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: .38em; text-transform: uppercase; font-weight: 400; }
@@ -110,19 +111,19 @@
     padding: 120px 40px 80px;
   }
   .hero::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(201,168,76,.03) 0 1px, transparent 1px 80px), repeating-linear-gradient(90deg, rgba(201,168,76,.03) 0 1px, transparent 1px 80px); pointer-events: none; }
-  .hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 50% 40%, transparent 50%, var(--black) 100%); pointer-events: none; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 50% 40%, transparent 50%, rgba(245,234,208,.7) 100%); pointer-events: none; }
   .hero-eyebrow { font-size: 10px; letter-spacing: .38em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; position: relative; z-index: 1; text-align: center; }
   .hero-monogram { position: relative; z-index: 1; animation: fadeUp .9s ease both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  .hero-wordmark { font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(52px, 10vw, 148px); letter-spacing: .22em; padding-left: .22em; color: var(--offwhite); position: relative; z-index: 1; animation: fadeUp .9s .15s ease both; }
-  .hero-sub { font-size: 10px; letter-spacing: .46em; text-transform: uppercase; color: rgba(245,240,232,.55); display: flex; align-items: center; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; animation: fadeUp .9s .3s ease both; gap: 4px; }
+  .hero-wordmark { font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(52px, 10vw, 148px); letter-spacing: .22em; padding-left: .22em; color: var(--black); position: relative; z-index: 1; animation: fadeUp .9s .15s ease both; }
+  .hero-sub { font-size: 10px; letter-spacing: .46em; text-transform: uppercase; color: rgba(10,10,10,.55); display: flex; align-items: center; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; animation: fadeUp .9s .3s ease both; gap: 4px; }
   .hero-sub .diamond { background: var(--gold); }
   .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; animation: fadeUp .9s .45s ease both; }
   .btn { display: inline-block; font-size: 10px; letter-spacing: .32em; text-transform: uppercase; text-decoration: none; padding: 14px 28px; transition: background .25s, color .25s, border-color .25s; white-space: nowrap; }
   .btn-primary { background: var(--gold); color: var(--black); border: 1px solid var(--gold); }
   .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
-  .btn-ghost { background: transparent; color: var(--offwhite); border: 1px solid rgba(245,240,232,.25); }
-  .btn-ghost:hover { border-color: var(--offwhite); }
+  .btn-ghost { background: transparent; color: var(--black); border: 1px solid rgba(10,10,10,.3); }
+  .btn-ghost:hover { border-color: var(--black); }
   .scroll-cue { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; z-index: 1; opacity: .5; animation: fadeUp .9s .7s ease both; align-self: stretch; padding: 0 6px; }
   .scroll-cue .line { width: 1px; height: 36px; background: var(--gold); animation: scrollLine 2s 1.5s ease-in-out infinite; }
   @keyframes scrollLine { 0% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(0) translateY(20px); opacity: 0; } }
@@ -141,12 +142,12 @@
   .intro-meta .diamond { background: var(--gold); }
 
   /* ── collection ── */
-  .collection { background: var(--black); padding: 100px 60px; }
+  .collection { background: var(--warm-bg); padding: 100px 60px; }
   .collection-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; gap: 40px; }
   .collection-header h2 { font-family: 'Bodoni Moda', serif; font-size: clamp(36px, 4vw, 56px); font-weight: 400; letter-spacing: .01em; line-height: 1.05; }
-  .collection-header p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: rgba(245,240,232,.55); max-width: 320px; text-align: right; line-height: 1.5; }
+  .collection-header p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: rgba(10,10,10,.55); max-width: 320px; text-align: right; line-height: 1.5; }
   .pieces-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .piece { position: relative; background: #0f0f0f; aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
+  .piece { position: relative; background: #F2E5B0; aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
   .piece::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(201,168,76,.04) 0 8px, transparent 8px 20px); }
   .piece-stone { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
   .stone-shape { position: relative; }
@@ -163,7 +164,7 @@
   .piece:hover .piece-frame { border-color: rgba(201,168,76,.6); }
   .piece-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 20px; background: linear-gradient(transparent, rgba(10,10,10,.92)); transform: translateY(8px); opacity: 0; transition: opacity .35s, transform .35s; }
   .piece:hover .piece-info { opacity: 1; transform: translateY(0); }
-  .piece-name { font-family: 'Bodoni Moda', serif; font-size: 18px; font-weight: 400; letter-spacing: .04em; margin-bottom: 6px; }
+  .piece-name { font-family: 'Bodoni Moda', serif; font-size: 18px; font-weight: 400; letter-spacing: .04em; margin-bottom: 6px; color: var(--offwhite); }
   .piece-meta { font-size: 9px; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); }
 
   /* ── marquee ── */
@@ -193,15 +194,15 @@
   .atelier-text p { font-size: 14px; line-height: 1.8; color: #3a3a3a; margin-bottom: 36px; }
 
   /* ── bespoke ── */
-  .bespoke { background: var(--black); padding: 120px 40px; text-align: center; position: relative; overflow: hidden; }
+  .bespoke { background: var(--warm-bg); padding: 120px 40px; text-align: center; position: relative; overflow: hidden; }
   .bespoke::before { content: ""; position: absolute; top: 50%; left: 50%; width: min(700px, 90vw); height: min(700px, 90vw); border-radius: 50%; border: 1px solid rgba(201,168,76,.08); transform: translate(-50%,-50%); }
   .bespoke::after { content: ""; position: absolute; top: 50%; left: 50%; width: min(900px, 110vw); height: min(900px, 110vw); border-radius: 50%; border: 1px solid rgba(201,168,76,.05); transform: translate(-50%,-50%); }
   .bespoke-inner { position: relative; z-index: 1; max-width: 660px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 28px; }
   .bespoke-eyebrow { font-size: 10px; letter-spacing: .42em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 16px; }
   .bespoke-eyebrow .rule { width: 32px; height: 1px; background: var(--gold); }
   .bespoke h2 { font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(40px, 6vw, 68px); line-height: 1.05; letter-spacing: .01em; }
-  .bespoke-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; font-weight: 300; color: rgba(245,240,232,.6); line-height: 1.5; }
-  .bespoke p { font-size: 14px; line-height: 1.8; color: rgba(245,240,232,.5); max-width: 460px; }
+  .bespoke-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; font-weight: 300; color: rgba(10,10,10,.6); line-height: 1.5; }
+  .bespoke p { font-size: 14px; line-height: 1.8; color: rgba(10,10,10,.5); max-width: 460px; }
 
   /* ── contact ── */
   .contact-band { background: var(--offwhite); color: var(--black); padding: 100px 60px; display: flex; justify-content: space-between; align-items: center; gap: 60px; }
@@ -217,7 +218,7 @@
   .form-note { font-size: 10px; letter-spacing: .16em; color: #9b9b9b; text-transform: uppercase; }
 
   /* ── footer ── */
-  footer { background: var(--black); padding: 72px 60px 36px; border-top: 1px solid rgba(201,168,76,.12); }
+  footer { background: #0A0A0A; padding: 72px 60px 36px; border-top: 1px solid rgba(201,168,76,.12); }
   .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(245,240,232,.08); }
   .footer-wordmark { font-family: 'Bodoni Moda', serif; font-size: 17px; letter-spacing: .44em; padding-left: .44em; color: var(--offwhite); margin-bottom: 18px; display: block; }
   .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; font-weight: 300; color: rgba(245,240,232,.5); line-height: 1.6; max-width: 260px; }
