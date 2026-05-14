@@ -122,10 +122,9 @@
   .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
   .btn-ghost { background: transparent; color: var(--offwhite); border: 1px solid rgba(245,240,232,.25); }
   .btn-ghost:hover { border-color: var(--offwhite); }
-  .scroll-cue { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 1; opacity: .4; animation: fadeUp .9s .7s ease both; }
+  .scroll-cue { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; z-index: 1; opacity: .5; animation: fadeUp .9s .7s ease both; align-self: stretch; padding: 0 6px; }
   .scroll-cue .line { width: 1px; height: 36px; background: var(--gold); animation: scrollLine 2s 1.5s ease-in-out infinite; }
   @keyframes scrollLine { 0% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(0) translateY(20px); opacity: 0; } }
-  .scroll-cue .label { font-size: 8px; letter-spacing: .4em; text-transform: uppercase; color: var(--gold); }
 
   /* ── intro ── */
   .intro { background: var(--offwhite); color: var(--black); padding: 100px 60px; display: flex; gap: 80px; align-items: flex-start; }
@@ -336,13 +335,12 @@
     <a class="btn btn-primary" href="#collection">
       <span class="lang-tr">Koleksiyonu Keşfet</span><span class="lang-en">Discover Collection</span>
     </a>
+    <div class="scroll-cue" aria-hidden="true">
+      <div class="line"></div>
+    </div>
     <a class="btn btn-ghost" href="#bespoke">
       <span class="lang-tr">Özel Sipariş Ver</span><span class="lang-en">Commission a Piece</span>
     </a>
-  </div>
-  <div class="scroll-cue" aria-hidden="true">
-    <div class="line"></div>
-    <span class="label"><span class="lang-tr">Kaydır</span><span class="lang-en">Scroll</span></span>
   </div>
 </section>
 
